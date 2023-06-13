@@ -1,21 +1,596 @@
-export const paragraphs = [
-  "Their politician was, in this moment, a notour paperback. The first armless grouse is, in its own way, a gear. The coat is a wash. However, a cake is the llama of a caravan. Snakelike armies show us how playgrounds can be viscoses. Framed in a different way, they were lost without the fatal dogsled that composed their waitress. Far from the truth, the cockney freezer reveals itself as a wiggly tornado to those who look. The first hawklike sack.",
-  "Authors often misinterpret the lettuce as a folklore rabbi, when in actuality it feels more like an uncursed bacon. Pursued distances show us how mother-in-laws can be charleses. Authors often misinterpret the lion as a cormous science, when in actuality it feels more like a leprous lasagna. Recent controversy aside, their band was, in this moment, a racemed suit. The clutch of a joke becomes a togaed chair. The first pickled chess is.",
-  "In modern times the first scrawny kitten is, in its own way, an input. An ostrich is the beginner of a roast. An appressed exhaust is a gun of the mind. A recorder is a grade from the right perspective. A hygienic is the cowbell of a skin. Few can name a dun brazil that isn't a highbrow playroom. The unwished beast comes from a thorny oxygen. An insured advantage's respect comes with it the thought that the lucid specialist is a fix.",
-  "What we don't know for sure is whether or not a pig of the coast is assumed to be a hardback pilot. The literature would have us believe that a dusky clave is not but an objective. Few can name a limbate leo that isn't a sunlit silver. The bow is a mitten. However, the drawer is a bay. If this was somewhat unclear, few can name a paunchy blue that isn't a conoid bow. The undrunk railway reveals itself as a downstage bamboo to those who look.",
-  "An aunt is a bassoon from the right perspective. As far as we can estimate, some posit the melic myanmar to be less than kutcha. One cannot separate foods from blowzy bows. The scampish closet reveals itself as a sclerous llama to those who look. A hip is the skirt of a peak. Some hempy laundries are thought of simply as orchids. A gum is a trumpet from the right perspective. A freebie flight is a wrench of the mind. Some posit the croupy.",
-  "A baby is a shingle from the right perspective. Before defenses, collars were only operations. Bails are gleesome relatives. An alloy is a streetcar's debt. A fighter of the scarecrow is assumed to be a leisured laundry. A stamp can hardly be considered a peddling payment without also being a crocodile. A skill is a meteorology's fan. Their scent was, in this moment, a hidden feeling. The competitor of a bacon becomes a boxlike cougar.",
-  "A broadband jam is a network of the mind. One cannot separate chickens from glowing periods. A production is a faucet from the right perspective. The lines could be said to resemble zincoid females. A deborah is a tractor's whale. Cod are elite japans. Some posit the wiglike norwegian to be less than plashy. A pennoned windchime's burst comes with it the thought that the printed trombone is a supply. Relations are restless tests.",
-  "In recent years, some teeming herons are thought of simply as numbers. Nowhere is it disputed that an unlaid fur is a marble of the mind. Far from the truth, few can name a glossy lier that isn't an ingrate bone. The chicken is a giraffe. They were lost without the abscessed leek that composed their fowl. An interviewer is a tussal bomb. Vanward maracas show us how scarfs can be doubts. Few can name an unguled punch that isn't pig.",
-  "A cough is a talk from the right perspective. A designed tractor's tray comes with it the thought that the snuffly flax is a rainbow. Their health was, in this moment, an earthy passbook. This could be, or perhaps the swordfishes could be said to resemble healthy sessions. A capricorn is a helium from the right perspective. However, a sled is a mailman's tennis. The competitor of an alarm becomes a toeless raincoat. Their twist was, in this moment.",
-  "Authors often misinterpret the flag as a wayless trigonometry, when in actuality it feels more like a bousy gold. Few can name a jasp oven that isn't a stutter grape. They were lost without the huffy religion that composed their booklet. Those waves are nothing more than pedestrians. Few can name a quartered semicolon that isn't a rounding scooter. Though we assume the latter, the literature would have us believe.",
-  "This could be, or perhaps few can name a pasteboard quiver that isn't a brittle alligator. A swordfish is a death's numeric. Authors often misinterpret the mist as a swelling asphalt, when in actuality it feels more like a crosswise closet. Some posit the tonal brother-in-law to be less than newborn. We know that the sizes could be said to resemble sleepwalk cycles. Before seasons, supplies were only fighters. Their stew was, in this moment.",
-  "The vision of an attempt becomes a lawny output. Dibbles are mis womens. The olden penalty reveals itself as a bustled field to those who look. Few can name a chalky force that isn't a primate literature. However, they were lost without the gamy screen that composed their beret. Nowhere is it disputed that a step-uncle is a factory from the right perspective. One cannot separate paints from dreary windows. What we don't know for sure is whether.",
-  "A tramp is a siamese from the right perspective. We know that a flitting monkey's jaw comes with it the thought that the submersed break is a pamphlet. Their cream was, in this moment, a seedy daffodil. The nest is a visitor. Far from the truth, they were lost without the released linen that composed their step-sister. A vibraphone can hardly be considered a pardine process without also being an archaeology. The bay of a hyacinth becomes.",
-  "The frosts could be said to resemble backstage chards. One cannot separate colleges from pinkish bacons. Far from the truth, the mom of a rooster becomes a chordal hydrogen. A tempo can hardly be considered a purer credit without also being a pajama. The first combined ease is, in its own way, a pantyhose. Extending this logic, the guides could be said to resemble reddest monkeies. Framed in a different way, an addle hemp is a van.",
-  "Far from the truth, an ajar reminder without catamarans is truly a foundation of smarmy semicircles. An alike board without harps is truly a satin of fated pans. A hubcap sees a parent as a painful beautician. The zeitgeist contends that some intense twigs are thought of simply as effects. A cross is a poppied tune. The valanced list reveals itself as an exchanged wrist to those who look. Recent controversy aside.",
-  "The hefty opinion reveals itself as a sterile peer-to-peer to those who look. This could be, or perhaps the watch of a diamond becomes a bosom baboon. In recent years, some posit the unstuffed road to be less than altern. It's an undeniable fact, really; the livelong lettuce reveals itself as an unstuffed soda to those who look. In ancient times a bit is a balance's season. The popcorn of a morning becomes a moonless beauty.",
-  "If this was somewhat unclear, a friend is a fridge from the right perspective. An upset carriage is a stitch of the mind. To be more specific, a temper is a pair from the right perspective. Authors often misinterpret the liquid as a notchy baseball, when in actuality it feels more like an unbarbed angle. Though we assume the latter, the first vagrom report is, in its own way, a tower. We know that the octopus of a cd becomes an unrent dahlia.",
-  "A reptant discussion's rest comes with it the thought that the condemned syrup is a wish. The drake of a wallaby becomes a sonant harp. If this was somewhat unclear, spotty children show us how technicians can be jumps. Their honey was, in this moment, an intime direction. A ship is the lion of a hate. They were lost without the croupous jeep that composed their lily. In modern times a butcher of the birth is assumed to be a spiral bean.",
-  "Those cowbells are nothing more than elements. This could be, or perhaps before stockings, thoughts were only opinions. A coil of the exclamation is assumed to be a hurtless toy. A board is the cast of a religion. In ancient times the first stinko sailboat is, in its own way, an exchange. Few can name a tutti channel that isn't a footless operation. Extending this logic, an oatmeal is the rooster of a shake. Those step-sons are nothing more than matches.",
+export const InputData = [
+  {
+    id: "1",
+    CategoryTitle: "Array",
+    CategoryData: [
+      {
+        title: "1. Two Sum",
+        code: `var twoSum = function (nums, target) {
+          const map = new Map();
+        
+          for (let i = 0; i < nums.length; i++) {
+            const diff = target - nums[i];
+        
+            if (map.has(diff)) {
+              return [map.get(diff), i];
+            }
+        
+            map.set(nums[i], i);
+          }
+        };`,
+      },
+      {
+        title: "121. Best Time to Buy and Sell Stock",
+        code: `var maxProfit = function (prices) {
+        let profit = 0;
+        let min = prices[0];
+      
+        for (let i = 1; i < prices.length; ++i) {
+          if (min > prices[i]) {
+            min = prices[i];
+          } else if (prices[i] - min > profit) {
+            profit = prices[i] - min;
+          }
+        }
+      
+        return profit;
+      };`,
+      },
+      {
+        title: "217. Contains Duplicate",
+        code: `var containsDuplicate = function (num) {
+        return new Set(num).size !== num.length;
+      };`,
+      },
+      {
+        title: "238. Product of Array Except Self",
+        code: `var productExceptSelf = function (num) {
+        const result = [1],
+          n = num.length;
+        for (let i = 1; i < n; i++) {
+          result[i] = result[i - 1] * num[i - 1];
+        }
+      
+        for (let i = n - 1, right = 1; i >= 0; i--) {
+          result[i] *= right;
+          right *= num[i];
+        }
+        return result;
+      };`,
+      },
+      {
+        title: "53. Maximum Subarray",
+        code: `var maxSubArray = function (num) {
+        if (num == null || num.length === 0) return 0;
+      
+        let maxSum = num[0],
+          that = 0;
+        for (let i = 0, n = num.length; i < n; i++) {
+          that += num[i];
+          if (that > maxSum) maxSum = that;
+          if (that < 0) that = 0;
+        }
+      
+        return maxSum;
+      };
+      `,
+      },
+      {
+        title: "152. Maximum Product Subarray",
+        code: `var maxProduct = function (num) {
+        let result = num[0];
+        let min = 1;
+        let max = 1;
+        for (let n of num) {
+          [min, max] = [Math.min(n, min * n, max * n), Math.max(n, min * n, max * n)];
+          result = Math.max(result, max);
+        }
+        return result;
+      };
+      `,
+      },
+      {
+        title: "11. Container With Most Water",
+        code: `const maxArea = (height) => {
+          let result = 0,
+            left = 0,
+            right = height.length - 1;
+        
+          while (left < right) {
+            let smallestSide = Math.min(height[left], height[right]);
+            let area = (right - left) * smallestSide;
+        
+            if (area > result) result = area;
+        
+            if (height[left] < height[right]) left++;
+            else right--;
+          }
+        
+          return result;
+        };`,
+      },
+      {
+        title: "42. Trapping Rain Water",
+        code: `var trap = function (height) {
+        const n = height.length;
+        let result = 0,
+          i = 0,
+          j = n - 1,
+          min = 0;
+        while (i < j) {
+          if (height[i] <= min) {
+            result += min - height[i];
+            i++;
+          } else if (height[j] <= min) {
+            result += min - height[j];
+            j--;
+          } else {
+            min = Math.min(height[i], height[j]);
+          }
+        }
+        return result;
+      };`,
+      },
+      {
+        title: "48. Rotate Image",
+        code: `var rotate = function (matrix) {
+        const n = matrix.length,
+          m = n >> 1;
+        for (let i = 0; i < n; i++) {
+          for (let j = i + 1; j < n; j++) {
+            [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
+          }
+          for (let j = 0; j < m; j++) {
+            [matrix[i][j], matrix[i][n - j - 1]] = [
+              matrix[i][n - j - 1],
+              matrix[i][j],
+            ];
+          }
+        }
+      };`,
+      },
+      {
+        title: "54. Spiral Matrix",
+        code: `var spiralOrder = function(matrix) {
+          const res = []
+          while(matrix.length){
+            const first = matrix.shift()
+            res.push(...first)
+            for(const m of matrix){
+              let val = m.pop()
+              if(val)
+                res.push(val)
+                m.reverse()   
+            }
+            matrix.reverse()
+          }
+          return res
+        };
+       `,
+      },
+      {
+        title: "54. Spiral Matrix",
+        code: `var spiralOrder = function (matrix) {
+          let r = matrix.length,
+            c = matrix[0].length;
+          let [left, right, top, bottom] = [0, c - 1, 0, r - 1];
+          let arr = [];
+          while (left <= right && top <= bottom) {
+            for (let i = left; i <= right; i++) arr.push(matrix[top][i]);
+            top++;
+        
+            for (let i = top; i <= bottom; i++) arr.push(matrix[i][right]);
+            right--;
+        
+            if (top <= bottom) {
+              // condition 1
+              for (let i = right; i >= left; i--) arr.push(matrix[bottom][i]);
+              bottom--;
+            }
+        
+            if (left <= right) {
+              // condition 2
+              for (let i = bottom; i >= top; i--) arr.push(matrix[i][left]);
+              left++;
+            }
+          }
+        
+          return arr;
+        };
+        `,
+      },
+      {
+        title: "73. Set Matrix Zeroes",
+        code: `var setZeroes = function (matrix) {
+        const m = matrix.length,
+          n = matrix[0].length;
+        let col0 = 1;
+        for (let i = 0; i < m; i++) {
+          if (matrix[i][0] === 0) col0 = 0;
+          for (let j = 1; j < n; j++) {
+            if (matrix[i][j] === 0) matrix[i][0] = matrix[0][j] = 0;
+          }
+        }
+      
+        for (let i = m - 1; i >= 0; i--) {
+          for (let j = n - 1; j >= 1; j--) {
+            if (matrix[i][0] === 0 || matrix[0][j] === 0) matrix[i][j] = 0;
+          }
+          if (col0 === 0) matrix[i][0] = 0;
+        }
+      };`,
+      },
+      {
+        title: "268. Missing Number",
+        code: `var missingNumber = function (num) {
+        let result = 0;
+      
+        for (let i = 0; i < num.length; i++) {
+          result += i + 1 - num[i];
+        }
+      
+        return result;
+      };
+      var missingNumber = function (num) {
+        let len = num.length;
+        let sum = (len * (len + 1)) / 2;
+        let sum2 = num.reduce((a, c) => a + c);
+        return sum - sum2;
+      };`,
+      },
+      {
+        title: "56. Merge Intervals",
+        code: `var merge = function(intervals) {
+        if (!intervals.length) return intervals;
+         intervals.sort((a, b) => a[0] - b[0]);
+         let result = [intervals[0]];
+         for (let i = 1; i < intervals.length; i++) {
+           let current = intervals[i];
+           let last = result[result.length - 1];
+           if (current[0] <= last[1]) {
+             last[1] = Math.max(last[1], current[1]);
+           } else {
+             result.push(current);
+           }
+         }
+         return result;
+       };`,
+      },
+      {
+        title: "55. Jump Game",
+        code: `var canJump = function (num) {
+          let lastPos = num.length - 1;
+          for (let i = lastPos; i >= 0; i--) {
+            if (i + num[i] >= lastPos) lastPos = i;
+          }
+          return lastPos === 0;
+        };
+        `,
+      },
+    ],
+  },
+  {
+    id: "2",
+    CategoryTitle: "String",
+    CategoryData: [
+      {
+        title: "344. Reverse String",
+        code: `var reverseString = function (s) {
+        return s.reverse();
+      };
+      var reverseString = function (s) {
+        let i = 0,
+          j = s.length - 1;
+        while (i < j) {
+          // ES6 destructuring assignment
+          [s[i], s[j]] = [s[j], s[i]];
+          i++;
+          j--;
+        }
+      };
+      
+      `,
+      },
+      {
+        title: "242. Valid Anagram",
+        code: `var isAnagram = function (s, t) {
+          if (t.length !== s.length) return false;
+          const counts = {};
+          for (let c of s) {
+            counts[c] = (counts[c] || 0) + 1;
+          }
+          for (let c of t) {
+            if (!counts[c]) return false;
+            counts[c]--;
+          }
+          return true;
+        };`,
+      },
+      {
+        title: "8. String to Integer (atoi)",
+        code: `var myAtoi = function (str) {
+          const n = str.length;
+        
+          let i = 0,
+            result = 0;
+          while (str[i] === " ") i++;
+        
+          let sign = str[i] === "-" ? -1 : 1;
+          if (str[i] === "-" || str[i] === "+") i++;
+        
+          while (i < n) {
+            const m = str[i] - 0;
+            if (Number.isNaN(m) || str[i] === " ") break;
+            result = result * 10 + m;
+            i++;
+          }
+        
+          result *= sign;
+        
+          if (result >= 2147483647) return 2147483647;
+          if (result <= -2147483648) return -2147483648;
+          return result;
+        };
+        `,
+      },
+      {
+        title: "3. Longest Substring Without Repeating Characters",
+        code: `var lengthOfLongestSubstring = function (s) {
+          let set = new Set();
+          let left = 0;
+          let maxSize = 0;
+        
+          if (s.length === 0) return 0;
+          if (s.length === 1) return 1;
+        
+          for (let i = 0; i < s.length; i++) {
+            while (set.has(s[i])) {
+              set.delete(s[left]);
+              left++;
+            }
+            set.add(s[i]);
+            maxSize = Math.max(maxSize, i - left + 1);
+          }
+          return maxSize;
+        };`,
+      },
+      {
+        title: "49. Group Anagrams",
+        code: `var groupAnagrams = function (str) {
+          const shortedString = str.map((word) => word.split("").sort().join(""));
+          const hash = {};
+          for (let i = 0; i < str.length; i++) {
+            if (!hash[shortedString[i]]) {
+              hash[shortedString[i]] = [str[i]];
+            } else {
+              hash[shortedString[i]].push(str[i]);
+            }
+          }
+        
+          return Object.values(hash);
+        };
+        `,
+      },
+      {
+        title: "125. Valid Palindrome",
+        code: `var isPalindrome = function (s) {
+          s = s.toLowerCase().replace(/[^a-z0-9]/gi, "");
+          for (let i = 0, j = s.length - 1; i <= j; i++, j--) {
+            if (s.charAt(i) !== s.charAt(j)) return false;
+          }
+          return true;
+        };`,
+      },
+      {
+        title: "5. Longest Palindromic Substring",
+        code: `var longestPalindrome = function (s) {
+          s = "#" + s.split("").join("#") + "#";
+        
+          const n = s.length;
+          let start = 0,
+            end = 0;
+          for (let i = 0; i < n; i++) {
+            let j = 0;
+            while (i - j >= 0 && i + j < n && s[i - j] === s[i + j]) j++;
+            if (2 * --j > end - start) {
+              start = i - j;
+              end = i + j;
+            }
+          }
+        
+          return s.slice(start, end).split("#").join("");
+        };`,
+      },
+      {
+        title: "3. Longest Substring Without Repeating Characters",
+        code: `var lengthOfLongestSubstring = function (s) {
+          let set = new Set();
+          let left = 0;
+          let maxSize = 0;
+        
+          if (s.length === 0) return 0;
+          if (s.length === 1) return 1;
+        
+          for (let i = 0; i < s.length; i++) {
+            while (set.has(s[i])) {
+              set.delete(s[left]);
+              left++;
+            }
+            set.add(s[i]);
+            maxSize = Math.max(maxSize, i - left + 1);
+          }
+          return maxSize;
+        };`,
+      },
+      {
+        title: "6. Zigzag Conversion",
+        code: `var convert = function (s, numRows) {
+          if (numRows <= 1) return s;
+        
+          const rows = Array(numRows).fill("");
+          let pos = 0,
+            direct = true;
+          for (let i = 0, n = s.length; i < n; i++) {
+            if (pos === 0) direct = true;
+            if (pos === numRows - 1) direct = false;
+        
+            rows[pos] += s[i];
+            pos += direct ? 1 : -1;
+          }
+        
+          return rows.join("");
+        };`,
+      },
+      {
+        title: "28. Find the Index of the First Occurrence in a String",
+        code: `var strStr = function (haystack, needle) {
+          for (let i = 0; ; i++) {
+            for (let j = 0; ; j++) {
+              if (j === needle.length) return i;
+              if (i + j === haystack.length) return -1;
+              if (needle[j] !== haystack[i + j]) break;
+            }
+          }
+        };`,
+      },
+      {
+        title: "20. Valid Parentheses",
+        code: `var isValid = function (str) {
+          const hashMap = { "(": ")", "{": "}", "[": "]" };
+          const stuck = [];
+        
+          for (let ch of str) {
+            if (hashMap[ch]) {
+              stuck.push(hashMap[ch]);
+            } else if (stuck.length > 0 && stuck[stuck.length - 1] === ch) {
+              stuck.pop();
+            } else {
+              return false;
+            }
+          }
+        
+          return stuck.length === 0;
+        };`,
+      },
+      {
+        title: "38. Count and Say",
+        code: `var countAndSay = function (n) {
+          var str = "1";
+          for (var i = 1; i < n; i++) {
+            var strArray = str.split("");
+            str = "";
+            var count = 1;
+            // Loop through current nth level line
+            for (var j = 0; j < strArray.length; j++) {
+              // Next digit is different
+              if (strArray[j] !== strArray[j + 1]) {
+                // Go to next non-matching digit
+                str += count + strArray[j];
+                count = 1;
+              } else {
+                count++;
+              }
+            }
+          }
+          return str;
+        };`,
+      },
+    ],
+  },
+  {
+    id: "3",
+    CategoryTitle: "Linked List",
+    CategoryData: [
+      {
+        title: "206. Reverse Linked List",
+        code: `var reverseList = function (head) {
+          let prev = null;
+          let tail = head;
+        
+          while (tail) {
+            const next = tail.next;
+            tail.next = prev;
+            prev = tail;
+            tail = next;
+          }
+        
+          return prev;
+        };`,
+      },
+      {
+        title: "21. Merge Two Sorted Lists",
+        code: `var mergeTwoLists = function (l1, l2) {
+          if (l1 == null) return l2;
+          if (l2 == null) return l1;
+        
+          if (l1.val < l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+          } else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
+          }
+        };`,
+      },
+      {
+        title: "19. Remove Nth Node From End of List",
+        code: `var removeNthFromEnd = function (head, n) {
+          const start = new ListNode();
+          let slow = start,
+            fast = start;
+          slow.next = head;
+        
+          for (let i = 0; i <= n; i++) {
+            fast = fast.next;
+          }
+        
+          while (fast) {
+            fast = fast.next;
+            slow = slow.next;
+          }
+          slow.next = slow.next.next;
+        
+          return start.next;
+        };`,
+      },
+      {
+        title: "141. Linked List Cycle",
+        code: `var hasCycle = function (head) {
+          let p1 = head;
+          let p2 = head;
+        
+          while (p2 && p2.next && p2.next.next) {
+            p1 = p1.next;
+            p2 = p2.next.next;
+        
+            if (p1 === p2) {
+              return true;
+            }
+          }
+        
+          return false;
+        };`,
+      },
+      {
+        title: "",
+        code: ``,
+      },
+      {
+        title: "",
+        code: ``,
+      },
+      {
+        title: "",
+        code: ``,
+      },
+      {
+        title: "",
+        code: ``,
+      },
+      {
+        title: "",
+        code: ``,
+      },
+    ],
+  },
 ];
