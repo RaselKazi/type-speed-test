@@ -57,6 +57,11 @@ export default function Home() {
     clearInterval(interval);
     totalTyped.current = 0;
   };
+
+  const handleItem = (code) => {
+    setTypeData(code);
+    setOpenMenu(false);
+  };
   return (
     <main className=" h-screen w-screen bg-slate-900 ">
       <div className=" md:hidden w-full h-10 bg-slate-700 ">
@@ -70,7 +75,7 @@ export default function Home() {
       <div className="  grid grid-cols-4">
         <div
           className={` md:block col-span-1  h-screen overflow-y-auto ${
-            openMenu ? " block absolute top-0 left-0 z-50  w-2/3" : " hidden"
+            openMenu ? " block absolute top-10 left-0 z-50  w-2/3" : " hidden"
           }`}
         >
           {InputData.map((item) => {
@@ -84,15 +89,27 @@ export default function Home() {
                 </p>
                 {item?.CategoryData.map((codeData, k) => {
                   return (
-                    <p
-                      key={k}
-                      onClick={() => setTypeData(codeData.code)}
-                      className={` p-3 pl-5 border-b-2  border-sky-700 hover:bg-slate-800 cursor-pointer transition-all duration-500  ${
+                    <div
+                      className={`flex w-full justify-between justify-items-center p-3 pl-5 border-b-2  border-sky-700 
+                      bg-slate-900 hover:bg-slate-800 cursor-pointer transition-all duration-500  ${
                         openIndex === item.id ? "  " : " hidden"
                       }`}
+                      key={k}
                     >
-                      {codeData.title}
-                    </p>
+                      <h6
+                        onClick={() => handleItem(codeData.code)}
+                        className={`  `}
+                      >
+                        {codeData.title}
+                      </h6>
+                      <a
+                        className=" hover:text-sky-400"
+                        target="blank"
+                        href="www.google.com"
+                      >
+                        Link
+                      </a>
+                    </div>
                   );
                 })}
               </div>
