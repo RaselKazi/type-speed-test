@@ -5,6 +5,7 @@ export const InputData = [
     CategoryData: [
       {
         title: "1. Two Sum",
+        link: "",
         code: `var twoSum = function (nums, target) {
           const map = new Map();
         
@@ -21,6 +22,7 @@ export const InputData = [
       },
       {
         title: "121. Best Time to Buy and Sell Stock",
+        link: "",
         code: `var maxProfit = function (prices) {
         let profit = 0;
         let min = prices[0];
@@ -38,12 +40,14 @@ export const InputData = [
       },
       {
         title: "217. Contains Duplicate",
+        link: "",
         code: `var containsDuplicate = function (num) {
         return new Set(num).size !== num.length;
       };`,
       },
       {
         title: "238. Product of Array Except Self",
+        link: "",
         code: `var productExceptSelf = function (num) {
         const result = [1],
           n = num.length;
@@ -60,6 +64,7 @@ export const InputData = [
       },
       {
         title: "53. Maximum Subarray",
+        link: "",
         code: `var maxSubArray = function (num) {
         if (num == null || num.length === 0) return 0;
       
@@ -77,6 +82,7 @@ export const InputData = [
       },
       {
         title: "152. Maximum Product Subarray",
+        link: "",
         code: `var maxProduct = function (num) {
         let result = num[0];
         let min = 1;
@@ -91,6 +97,7 @@ export const InputData = [
       },
       {
         title: "11. Container With Most Water",
+        link: "",
         code: `const maxArea = (height) => {
           let result = 0,
             left = 0,
@@ -111,6 +118,7 @@ export const InputData = [
       },
       {
         title: "42. Trapping Rain Water",
+        link: "",
         code: `var trap = function (height) {
         const n = height.length;
         let result = 0,
@@ -133,6 +141,7 @@ export const InputData = [
       },
       {
         title: "48. Rotate Image",
+        link: "",
         code: `var rotate = function (matrix) {
         const n = matrix.length,
           m = n >> 1;
@@ -151,6 +160,7 @@ export const InputData = [
       },
       {
         title: "54. Spiral Matrix",
+        link: "",
         code: `var spiralOrder = function(matrix) {
           const res = []
           while(matrix.length){
@@ -170,6 +180,7 @@ export const InputData = [
       },
       {
         title: "54. Spiral Matrix",
+        link: "",
         code: `var spiralOrder = function (matrix) {
           let r = matrix.length,
             c = matrix[0].length;
@@ -201,6 +212,7 @@ export const InputData = [
       },
       {
         title: "73. Set Matrix Zeroes",
+        link: "",
         code: `var setZeroes = function (matrix) {
         const m = matrix.length,
           n = matrix[0].length;
@@ -222,6 +234,7 @@ export const InputData = [
       },
       {
         title: "268. Missing Number",
+        link: "",
         code: `var missingNumber = function (num) {
         let result = 0;
       
@@ -240,6 +253,7 @@ export const InputData = [
       },
       {
         title: "56. Merge Intervals",
+        link: "",
         code: `var merge = function(intervals) {
         if (!intervals.length) return intervals;
          intervals.sort((a, b) => a[0] - b[0]);
@@ -275,6 +289,7 @@ export const InputData = [
     CategoryData: [
       {
         title: "344. Reverse String",
+        link: "",
         code: `var reverseString = function (s) {
         return s.reverse();
       };
@@ -293,6 +308,7 @@ export const InputData = [
       },
       {
         title: "242. Valid Anagram",
+        link: "",
         code: `var isAnagram = function (s, t) {
           if (t.length !== s.length) return false;
           const counts = {};
@@ -308,6 +324,7 @@ export const InputData = [
       },
       {
         title: "8. String to Integer (atoi)",
+        link: "",
         code: `var myAtoi = function (str) {
           const n = str.length;
         
@@ -335,6 +352,7 @@ export const InputData = [
       },
       {
         title: "3. Longest Substring Without Repeating Characters",
+        link: "",
         code: `var lengthOfLongestSubstring = function (s) {
           let set = new Set();
           let left = 0;
@@ -356,6 +374,7 @@ export const InputData = [
       },
       {
         title: "49. Group Anagrams",
+        link: "",
         code: `var groupAnagrams = function (str) {
           const shortedString = str.map((word) => word.split("").sort().join(""));
           const hash = {};
@@ -373,6 +392,7 @@ export const InputData = [
       },
       {
         title: "125. Valid Palindrome",
+        link: "",
         code: `var isPalindrome = function (s) {
           s = s.toLowerCase().replace(/[^a-z0-9]/gi, "");
           for (let i = 0, j = s.length - 1; i <= j; i++, j--) {
@@ -383,6 +403,7 @@ export const InputData = [
       },
       {
         title: "5. Longest Palindromic Substring",
+        link: "",
         code: `var longestPalindrome = function (s) {
           s = "#" + s.split("").join("#") + "#";
         
@@ -403,6 +424,7 @@ export const InputData = [
       },
       {
         title: "3. Longest Substring Without Repeating Characters",
+        link: "",
         code: `var lengthOfLongestSubstring = function (s) {
           let set = new Set();
           let left = 0;
@@ -424,6 +446,7 @@ export const InputData = [
       },
       {
         title: "6. Zigzag Conversion",
+        link: "",
         code: `var convert = function (s, numRows) {
           if (numRows <= 1) return s;
         
@@ -443,6 +466,7 @@ export const InputData = [
       },
       {
         title: "28. Find the Index of the First Occurrence in a String",
+        link: "",
         code: `var strStr = function (haystack, needle) {
           for (let i = 0; ; i++) {
             for (let j = 0; ; j++) {
@@ -455,6 +479,7 @@ export const InputData = [
       },
       {
         title: "20. Valid Parentheses",
+        link: "",
         code: `var isValid = function (str) {
           const hashMap = { "(": ")", "{": "}", "[": "]" };
           const stuck = [];
@@ -474,6 +499,7 @@ export const InputData = [
       },
       {
         title: "38. Count and Say",
+        link: "",
         code: `var countAndSay = function (n) {
           var str = "1";
           for (var i = 1; i < n; i++) {
@@ -503,6 +529,7 @@ export const InputData = [
     CategoryData: [
       {
         title: "206. Reverse Linked List",
+        link: "",
         code: `var reverseList = function (head) {
           let prev = null;
           let tail = head;
@@ -519,6 +546,7 @@ export const InputData = [
       },
       {
         title: "21. Merge Two Sorted Lists",
+        link: "",
         code: `var mergeTwoLists = function (l1, l2) {
           if (l1 == null) return l2;
           if (l2 == null) return l1;
@@ -534,6 +562,7 @@ export const InputData = [
       },
       {
         title: "19. Remove Nth Node From End of List",
+        link: "",
         code: `var removeNthFromEnd = function (head, n) {
           const start = new ListNode();
           let slow = start,
@@ -555,6 +584,7 @@ export const InputData = [
       },
       {
         title: "141. Linked List Cycle",
+        link: "",
         code: `var hasCycle = function (head) {
           let p1 = head;
           let p2 = head;
@@ -573,6 +603,7 @@ export const InputData = [
       },
       {
         title: "2. Add Two Numbers",
+        link: "",
         code: `var addTwoNumbers = function (l1, l2) {
           const result = new ListNode();
           let p = l1,
@@ -592,6 +623,7 @@ export const InputData = [
       },
       {
         title: "160. Intersection of Two Linked Lists",
+        link: "",
         code: `var getIntersectionNode = function (headA, headB) {
           if (!headA || !headB) return null;
           var curA = headA;
@@ -605,6 +637,7 @@ export const InputData = [
       },
       {
         title: "234. Palindrome Linked List",
+        link: "",
         code: `var isPalindrome = function (head) {
           let a = "",
             b = "";
@@ -621,6 +654,7 @@ export const InputData = [
       },
       {
         title: "83. Remove Duplicates from Sorted List",
+        link: "",
         code: `var deleteDuplicates = function (head) {
           let p = head;
           while (p && p.next) {
@@ -644,6 +678,7 @@ export const InputData = [
     CategoryData: [
       {
         title: "155. Min Stack",
+        link: "",
         code: `var MinStack = function () {
           this.elements = [];
         };
@@ -670,10 +705,12 @@ export const InputData = [
       },
       {
         title: "",
+        link: "",
         code: ``,
       },
       {
         title: "",
+        link: "",
         code: ``,
       },
     ],
