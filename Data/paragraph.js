@@ -1024,6 +1024,83 @@ export const InputData = [
         link: "",
         code: ``,
       },
+      {
+        title: "102. Binary Tree Level Order Traversal",
+        link: "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+        code: `var levelOrder = function(root) {
+          if (root == null) return [];
+          let queue = [], values = [];
+          queue.push(root);
+          while (queue.length > 0) {
+              let len = queue.length, level = [];
+              for (let i = 0; i < len; i++) {
+                  let node = queue.shift();
+                  level.push(node.val);
+                  if (node.left) queue.push(node.left);
+                  if (node.right) queue.push(node.right);
+              }
+              values.push(level);
+          }
+          return values;
+        };`,
+      },
+      {
+        title: "104. Maximum Depth of Binary Tree",
+        link: "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+        code: `var maxDepth = function(root) {
+          return root == null ? 0 : 1 + Math.max(maxDepth(root.left), maxDepth(root.right))
+          
+      };`,
+      },
+      {
+        title: "98. Validate Binary Search Tree",
+        link: "https://leetcode.com/problems/validate-binary-search-tree/",
+        code: `var isValidBST = function (root, min = null, max = null) {
+          if (!root) return true;
+          if (min && root.val <= min.val) return false;
+          if (max && root.val >= max.val) return false;
+          return isValidBST(root.left, min, root) && isValidBST(root.right, root, max);
+        };`,
+      },
+      {
+        title: "101. Symmetric Tree",
+        link: "https://leetcode.com/problems/symmetric-tree/",
+        code: `var isSymmetric = function (root) {
+          if (root == null) return true;
+          function iter(left, right) {
+            if (left === right) return true;
+            if (left && right && left.val === right.val) {
+              return iter(left.left, right.right) && iter(left.right, right.left);
+            }
+            return false;
+          }
+          return iter(root.left, root.right);
+        };`,
+      },
+      {
+        title: "105. Construct Binary Tree from PreOrder and InOrder Traversal",
+        link: "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+        code: `var buildTree = function (preOrder, inOrder) {
+          const n = preOrder.length;
+          if (n <= 0) return null;
+        
+          const root = new TreeNode(preOrder[0]);
+          const i = preOrder.indexOf(preOrder[0]);
+          root.left = buildTree(preOrder.slice(1, i + 1), preOrder.slice(0, i));
+          root.right = buildTree(preOrder.slice(i + 1, n), preOrder.slice(i + 1, n));
+          return root;
+        };`,
+      },
+      {
+        title: "108. Convert Sorted Array to Binary Search Tree",
+        link: "https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/",
+        code: ``,
+      },
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
     ],
   },
   {
@@ -1042,9 +1119,231 @@ export const InputData = [
     CategoryTitle: "Recursion and Backtracking",
     CategoryData: [
       {
-        title: "",
-        link: "",
-        code: ``,
+        title: "70. Climbing Stairs",
+        link: "https://leetcode.com/problems/climbing-stairs/",
+        code: `var climbStairs = function (n) {
+          const cache = new Map();
+          const memo = (n) => {
+            if (n < 4) return n;
+            if (!cache.has(n)) {
+              cache.set(n, memo(n - 2) + memo(n - 1));
+            }
+            return cache.get(n);
+          };
+          return memo(n);
+        };`,
+      },
+      {
+        title: "22. Generate Parentheses",
+        link: "https://leetcode.com/problems/generate-parentheses/",
+        code: `var generateParenthesis = function (n) {
+          var arr = [];
+          compose(n, n, "");
+          return arr;
+        
+          function compose(left, right, str) {
+            if (!left && !right && str.length) return arr.push(str);
+            if (left) compose(left - 1, right, str + "(");
+            if (right > left) compose(left, right - 1, str + ")");
+          }
+        };`,
+      },
+      {
+        title: "39. Combination Sum",
+        link: "https://leetcode.com/problems/combination-sum/description/",
+        code: `function combinationSum(candidates, target) {
+          var buffer = [];
+          var result = [];
+          search(0, target);
+          return result;
+        
+          function search(startIdx, target) {
+            if (target === 0) return result.push(buffer.slice());
+            if (target < 0) return;
+            if (startIdx === candidates.length) return;
+            buffer.push(candidates[startIdx]);
+            search(startIdx, target - candidates[startIdx]);
+            buffer.pop();
+            search(startIdx + 1, target);
+          }
+        }`,
+      },
+      {
+        title: "46. Permutations",
+        link: "https://leetcode.com/problems/permutations/description/",
+        code: `const swap = (arr, i, j) => {
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        };
+        
+        const permute = (num, index = 0, answer = []) => {
+          if (index === num.length - 1) {
+            answer.push([...num]);
+          }
+        
+          for (let i = index; i < num.length; i++) {
+            swap(num, index, i);
+            permute(num, index + 1, answer);
+            swap(num, index, i);
+          }
+          return answer;
+        };`,
+      },
+      {
+        title: "78. Subsets",
+        link: "https://leetcode.com/problems/subsets/description/",
+        code: `var subsets = function (num) {
+          const result = [];
+          const dfs = (i, num, slate) => {
+            if (i === num.length) {
+              result.push(slate.slice());
+              return;
+            }
+            dfs(i + 1, num, slate);
+            slate.push(num[i]);
+            dfs(i + 1, num, slate);
+            slate.pop();
+          };
+          dfs(0, num, []);
+          return result;
+        };`,
+      },
+      {
+        title: "79. Word Search",
+        link: "https://leetcode.com/problems/word-search/description/",
+        code: `var exist = function (board, word) {
+          const m = board.length,
+            n = board[0].length,
+            w = word.length;
+          if (w === 0) return true;
+        
+          function match(i, j, c) {
+            let isExist = false;
+            if (0 <= i && i < m && 0 <= j && j < n) {
+              if (board[i][j] === word[c]) {
+                const tmp = word[c];
+                board[i][j] = true;
+                if (next(i, j, c + 1)) isExist = true;
+                board[i][j] = tmp;
+              }
+            }
+            return isExist;
+          }
+        
+          const next = (i, j, c) =>
+            c >= w ||
+            match(i - 1, j, c) ||
+            match(i, j + 1, c) ||
+            match(i + 1, j, c) ||
+            match(i, j - 1, c);
+        
+          for (let i = 0; i < m; i++) {
+            for (let j = 0; j < n; j++) {
+              if (match(i, j, 0)) return true;
+            }
+          }
+          return false;
+        };
+        `,
+      },
+      {
+        title: "51. N-Queens",
+        link: "https://leetcode.com/problems/n-queens/description/",
+        code: `var solveNQueens = function(n) {
+          const res = [];
+          backtrack(res, n);
+          return res;
+      };
+      
+      function backtrack(res, n, board = [], r = 0) {
+          if (r === n) {
+              res.push(board.map(c => '.'.repeat(c) + 'Q' + '.'.repeat(n - c - 1)));
+              return;
+          }
+          for (let c = 0; c < n; c++) {
+              if (!board.some((bc, br) => bc === c || bc === c + r - br || bc === c - r + br)) {
+                  board.push(c);
+                  backtrack(res, n, board, r + 1);
+                  board.pop();
+              }
+          }
+      }`,
+      },
+      {
+        title: "17. Letter Combinations of a Phone Number",
+        link: "https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/",
+        code: `const L = {'2':"abc",'3':"def",'4':"ghi",'5':"jkl",
+        '6':"mno",'7':"pqrs",'8':"tuv",'9':"wxyz"}
+        
+   var letterCombinations = function (D) {
+     let len = D.length,
+       ans = [];
+     if (!len) return [];
+     const dfs = (pos, str) => {
+       if (pos === len) ans.push(str);
+       else {
+         let letters = L[D[pos]];
+         for (let i = 0; i < letters.length; i++) dfs(pos + 1, str + letters[i]);
+       }
+     };
+     dfs(0, "");
+     return ans;
+   };`,
+      },
+      {
+        title: "131. Palindrome Partitioning",
+        link: "https://leetcode.com/problems/palindrome-partitioning/description/",
+        code: `var partition = function (s) {
+          function isPalindrome(str) {
+            let left = 0,
+              right = str.length - 1;
+        
+            while (left < right) {
+              if (str[left] !== str[right]) return false;
+              left++;
+              right--;
+            }
+            return true;
+          }
+          const result = [];
+          function permute(arr, str) {
+            if (!str.length) result.push(arr);
+        
+            for (let i = 1; i <= str.length; i++) {
+              const subStr = str.slice(0, i);
+              if (isPalindrome(subStr)) {
+                permute([...arr, subStr], str.slice(i));
+              }
+            }
+          }
+          permute([], s);
+          return result;
+        };`,
+      },
+      {
+        title: "93. Restore IP Addresses",
+        link: "https://leetcode.com/problems/restore-ip-addresses/description/",
+        code: `var restoreIpAddresses = function (s) {
+          const result = [];
+          function permute(arr, str) {
+            if (arr.length === 3) {
+              if (isValid(str)) result.push([...arr, str]);
+              return;
+            }
+        
+            for (let i = 1; i < 4; i++) {
+              let subStr = str.slice(0, i);
+              if (!isValid(subStr)) continue;
+              permute([...arr, subStr], str.slice(i));
+            }
+          }
+          function isValid(str) {
+            if (+str > 255 || !str.length) return false;
+            if (str.length >= 2 && str[0] === "0") return false;
+            return true;
+          }
+          permute([], s);
+          return result.map((x) => x.join("."));
+        };`,
       },
     ],
   },
@@ -1155,19 +1454,68 @@ export const InputData = [
         `,
       },
       {
-        title: "",
-        link: "",
-        code: ``,
+        title: "268. Missing Number",
+        link: "https://leetcode.com/problems/missing-number/",
+        code: `var missingNumber = function (nums) {
+          let result = 0;
+          for (let i = 0; i < nums.length; i++) {
+            result += i + 1 - nums[i];
+          }
+          return result;
+        };
+        `,
       },
       {
-        title: "",
-        link: "",
-        code: ``,
+        title: "190. Reverse Bits",
+        link: "https://leetcode.com/problems/reverse-bits/",
+        code: `const reverseBits = function (n) {
+          return parseInt([...n.toString(2)].reverse().join("").padEnd(32, "0"), 2);
+        };`,
       },
       {
-        title: "",
-        link: "",
-        code: ``,
+        title: "90. Subsets II",
+        link: "https://leetcode.com/problems/subsets-ii/",
+        code: `var subsetsWithDup = function(nums) {
+          nums.sort((a, b) => a - b)
+          const n = nums.length
+          const res = []
+          const iter = (array, m, i) => {
+            if (array.length === m) res.push([...array])
+            else {
+              for (let j = i; j < n; j++) {
+                if (j === i || nums[j] !== nums[j - 1]) {
+                  array.push(nums[j])
+                  iter(array, m, j + 1)
+                  array.pop()
+                }
+              }
+            }
+          }
+          for (let i = 0; i <= n; i++) {
+            iter([], i, 0)
+          }
+          return res   
+        };`,
+      },
+      {
+        title: "169. Majority Element",
+        link: "https://leetcode.com/problems/majority-element/",
+        code: `function majorityElement(nums) {
+          let candidate;
+          let count = 0;
+          for (const num of nums) {
+            if (count === 0) {
+              candidate = num;
+            }
+            count += num === candidate ? 1 : -1;
+          }
+          return candidate;
+        }`,
+      },
+      {
+        title: "231. Power of Two",
+        link: "https://leetcode.com/problems/power-of-two/",
+        code: `let isPowerOfTwo = n => n > 0 ? !(n & n-1) : false;`,
       },
     ],
   },
