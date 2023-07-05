@@ -786,6 +786,159 @@ export const InputData = [
         `,
       },
       {
+        title: "225. Implement Stack using Queues",
+        link: "https://leetcode.com/problems/implement-stack-using-queues/description/",
+        code: `class MyQueue {
+          constructor() {
+            this.data = [];
+            this.front = 0;
+            this.rear = 0;
+          }
+          enqueue(element) {
+            this.data[this.rear] = element;
+            this.rear++;
+          }
+        
+          isEmpty() {
+            return this.front == this.rear;
+          }
+        
+          print() {
+            for (let i = this.front; i < this.rear; ++i) console.log(this.data[i]);
+          }
+          dequeue() {
+            if (this.isEmpty()) {
+              throw new Error("Queue Underflow");
+            }
+            let frontElement = this.data[this.front];
+            this.front++;
+            return frontElement;
+          }
+        
+          length() {
+            return this.rear - this.front;
+          }
+          getFront() {
+            if (this.isEmpty()) {
+              throw new Error("Queue is Empty!");
+            }
+            return this.data[this.front];
+          }
+        }
+        `,
+      },
+      {
+        title: "225. Implement Stack using Queues",
+        link: "https://leetcode.com/problems/implement-stack-using-queues/description/",
+        code: `var MyStack = function () {
+          this.inQueue = [];
+          this.outQueue = [];
+        };
+        
+        MyStack.prototype.push = function (x) {
+          this.inQueue.push(x);
+        };
+        
+        MyStack.prototype.pop = function () {
+          while (this.inQueue.length > 1) {
+            this.outQueue.push(this.inQueue.shift());
+          }
+          const lastItem = this.inQueue.shift();
+          [this.inQueue, this.outQueue] = [this.outQueue, this.inQueue];
+        
+          return lastItem;
+        };
+        
+        MyStack.prototype.top = function () {
+          while (this.inQueue.length > 1) {
+            this.outQueue.push(this.inQueue.shift());
+          }
+          // peak
+          const lastItem = this.inQueue[0];
+          this.outQueue.push(this.inQueue.shift());
+          [this.inQueue, this.outQueue] = [this.outQueue, this.inQueue];
+        
+          return lastItem;
+        };
+        
+        MyStack.prototype.empty = function () {
+          return this.inQueue.length === 0;
+        };`,
+      },
+      {
+        title: "622. Design Circular Queue",
+        link: "https://leetcode.com/problems/design-circular-queue/description/",
+        code: `var MyCircularQueue = function (k) {
+          this.storage = [];
+          this.currentSize = 0;
+          this.maxSize = k;
+          this.front = 0;
+          this.rear = -1;
+        };
+        
+        MyCircularQueue.prototype.enQueue = function (value) {
+          if (this.currentSize >= this.maxSize) {
+            return false;
+          }
+        
+          this.rear = ++this.rear % this.maxSize;
+          this.storage[this.rear] = value;
+          this.currentSize++;
+        
+          return true;
+        };
+        
+        MyCircularQueue.prototype.deQueue = function () {
+          if (this.currentSize === 0) {
+            return false;
+          }
+        
+          this.front = ++this.front % this.maxSize;
+          this.currentSize--;
+        
+          return true;
+        };
+        
+        MyCircularQueue.prototype.Front = function () {
+          return this.currentSize === 0 ? -1 : this.storage[this.front];
+        };
+        
+        MyCircularQueue.prototype.Rear = function () {
+          return this.currentSize === 0 ? -1 : this.storage[this.rear];
+        };
+        
+        MyCircularQueue.prototype.isEmpty = function () {
+          return this.currentSize === 0;
+        };
+        
+        MyCircularQueue.prototype.isFull = function () {
+          return this.currentSize === this.maxSize;
+        };`,
+      },
+      {
+        title: "239. Sliding Window Maximum",
+        link: "https://leetcode.com/problems/sliding-window-maximum/",
+        code: `var maxSlidingWindow = function (nums, k) {
+          const q = [];
+          const res = [];
+          for (let i = 0; i < nums.length; i++) {
+            while (q && nums[q[q.length - 1]] <= nums[i]) {
+              q.pop();
+            }
+            q.push(i);
+        
+            if (q[0] === i - k) {
+              q.shift();
+            }
+            if (i >= k - 1) {
+              res.push(nums[q[0]]);
+            }
+          }
+          return res;
+        };
+        `,
+      },
+      {
         title: "",
         link: "",
         code: ``,

@@ -1,31 +1,18 @@
-var MyQueue = function () {
-  this.stack1 = [];
-  this.stack2 = [];
-  this.front = null;
-};
+var maxSlidingWindow = function (nums, k) {
+  const q = [];
+  const res = [];
+  for (let i = 0; i < nums.length; i++) {
+    while (q && nums[q[q.length - 1]] <= nums[i]) {
+      q.pop();
+    }
+    q.push(i);
 
-MyQueue.prototype.push = function (x) {
-  if (this.stack1.length == 0) {
-    this.front = x;
-  }
-  this.stack1.push(x);
-};
-
-MyQueue.prototype.pop = function () {
-  if (this.stack2.length == 0) {
-    while (this.stack1.length != 0) {
-      this.stack2.push(this.stack1.pop());
+    if (q[0] === i - k) {
+      q.shift();
+    }
+    if (i >= k - 1) {
+      res.push(nums[q[0]]);
     }
   }
-  return this.stack2.pop();
-};
-
-MyQueue.prototype.peek = function () {
-  return this.stack2.length == 0
-    ? this.front
-    : this.stack2[this.stack2.length - 1];
-};
-
-MyQueue.prototype.empty = function () {
-  return this.stack1.length == 0 && this.stack2.length == 0;
+  return res;
 };
