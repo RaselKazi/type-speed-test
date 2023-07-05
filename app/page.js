@@ -105,7 +105,7 @@ export default function Home() {
                       <a
                         className=" hover:text-sky-400"
                         target="blank"
-                        href="www.google.com"
+                        href={`${codeData.link}`}
                       >
                         Link
                       </a>

@@ -704,9 +704,86 @@ export const InputData = [
         `,
       },
       {
-        title: "",
-        link: "",
-        code: ``,
+        title: "20. Valid Parentheses",
+        link: "https://leetcode.com/problems/valid-parentheses/",
+        code: `var isValid = function (s) {
+          const stack = [];
+          const map = {
+            "(": ")",
+            "[": "]",
+            "{": "}",
+          };
+        
+          for (let i = 0; i < s.length; i++) {
+            let c = s[i];
+            if (map[c]) {
+              stack.push(map[c]);
+            } else if (c !== stack.pop()) {
+              return false;
+            }
+          }
+        
+          return !stack.length;
+        };`,
+      },
+      {
+        title: "150. Evaluate Reverse Polish Notation",
+        link: "https://leetcode.com/problems/evaluate-reverse-polish-notation/description/",
+        code: `var evalRPN = function (tokens) {
+          let stack = [];
+          let ops = {
+            "+": (a, b) => a + b,
+            "-": (a, b) => a - b,
+            "*": (a, b) => a * b,
+            "/": (a, b) => (a / b >= 0 ? Math.floor(a / b) : Math.ceil(a / b)),
+          };
+          for (let t of tokens) {
+            if (ops[t]) {
+              let top = stack.pop();
+              let second = stack.pop();
+              stack.push(ops[t](second, top));
+            } else {
+              stack.push(Number(t));
+            }
+          }
+          return stack.pop();
+        };`,
+      },
+      {
+        title: "232. Implement Queue using Stacks",
+        link: "https://leetcode.com/problems/implement-queue-using-stacks/description/",
+        code: `var MyQueue = function () {
+          this.stack1 = [];
+          this.stack2 = [];
+          this.front = null;
+        };
+        
+        MyQueue.prototype.push = function (x) {
+          if (this.stack1.length == 0) {
+            this.front = x;
+          }
+          this.stack1.push(x);
+        };
+        
+        MyQueue.prototype.pop = function () {
+          if (this.stack2.length == 0) {
+            while (this.stack1.length != 0) {
+              this.stack2.push(this.stack1.pop());
+            }
+          }
+          return this.stack2.pop();
+        };
+        
+        MyQueue.prototype.peek = function () {
+          return this.stack2.length == 0
+            ? this.front
+            : this.stack2[this.stack2.length - 1];
+        };
+        
+        MyQueue.prototype.empty = function () {
+          return this.stack1.length == 0 && this.stack2.length == 0;
+        };
+        `,
       },
       {
         title: "",

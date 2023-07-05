@@ -1,22 +1,31 @@
-var MinStack = function () {
-  this.elements = [];
+var MyQueue = function () {
+  this.stack1 = [];
+  this.stack2 = [];
+  this.front = null;
 };
 
-MinStack.prototype.push = function (val) {
-  this.elements.push({
-    value: val,
-    min: this.elements.length === 0 ? val : Math.min(val, this.getMin()),
-  });
+MyQueue.prototype.push = function (x) {
+  if (this.stack1.length == 0) {
+    this.front = x;
+  }
+  this.stack1.push(x);
 };
 
-MinStack.prototype.pop = function () {
-  this.elements.pop();
+MyQueue.prototype.pop = function () {
+  if (this.stack2.length == 0) {
+    while (this.stack1.length != 0) {
+      this.stack2.push(this.stack1.pop());
+    }
+  }
+  return this.stack2.pop();
 };
 
-MinStack.prototype.top = function () {
-  return this.elements[this.elements.length - 1].value;
+MyQueue.prototype.peek = function () {
+  return this.stack2.length == 0
+    ? this.front
+    : this.stack2[this.stack2.length - 1];
 };
 
-MinStack.prototype.getMin = function () {
-  return this.elements[this.elements.length - 1].min;
+MyQueue.prototype.empty = function () {
+  return this.stack1.length == 0 && this.stack2.length == 0;
 };
