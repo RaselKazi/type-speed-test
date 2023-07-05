@@ -116,22 +116,23 @@ export default function Home() {
             );
           })}
         </div>
-        <div className="  col-span-4 md:col-span-3 ">
+        <div className="  col-span-4 md:col-span-3">
           <div className="">
             <div className=" relative  ">
               <ReactCodeMirror
                 value={typeData}
                 height="85vh"
-                width="100%"
                 theme={githubDark}
                 extensions={[javascript({ jsx: true })]}
                 className=" text-gray-200 text-xl overflow-auto "
               />
-              <UserTypings
-                className=" absolute inset-0 "
-                words={typeData}
-                userInput={typed}
-              />
+              {typed && (
+                <UserTypings
+                  className=" absolute inset-0 "
+                  words={typeData}
+                  userInput={typed}
+                />
+              )}
             </div>
           </div>
           <div className=" border-t-2 border-sky-500  p-4 ">

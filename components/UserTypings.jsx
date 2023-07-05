@@ -30,14 +30,6 @@ export default function UserTypings({ userInput, words, className = "" }) {
         }}
         className=" absolute  text-xl "
       />
-      {/* {typedCharacters.map((char, index) => (
-        <Character
-          key={`${char}_${index}`}
-          actual={char}
-          expected={words[index]}
-        />
-      ))}
-      <div className="inline-block bg-yellow-500 w-[1.5px] h-4 animate-pulse"></div> */}
     </div>
   );
 }
