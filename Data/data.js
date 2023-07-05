@@ -1,15 +1,22 @@
-var hasCycle = function (head) {
-  let p1 = head;
-  let p2 = head;
+var MinStack = function () {
+  this.elements = [];
+};
 
-  while (p2 && p2.next && p2.next.next) {
-    p1 = p1.next;
-    p2 = p2.next.next;
+MinStack.prototype.push = function (val) {
+  this.elements.push({
+    value: val,
+    min: this.elements.length === 0 ? val : Math.min(val, this.getMin()),
+  });
+};
 
-    if (p1 === p2) {
-      return true;
-    }
-  }
+MinStack.prototype.pop = function () {
+  this.elements.pop();
+};
 
-  return false;
+MinStack.prototype.top = function () {
+  return this.elements[this.elements.length - 1].value;
+};
+
+MinStack.prototype.getMin = function () {
+  return this.elements[this.elements.length - 1].min;
 };

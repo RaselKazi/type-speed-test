@@ -15,21 +15,12 @@ export default function Home() {
   const text = InputData[ranIndex].CategoryData[Category].code;
   const [startTime, setStartTime] = useState(0);
   const [openIndex, setOpenIndex] = useState("");
+  const [openMenu, setOpenMenu] = useState(false);
   const [typeData, setTypeData] = useState(text);
   const [typed, setTyped] = useState("");
   const totalTyped = useRef(0);
-  // var x = new Date(startTime);
-  // var y = new Date();
-  // let seconds = Math.abs(x.getTime() - y.getTime()) / 1000;
-  // console.log(seconds);
   let interval;
   const keydownHandler = useCallback(({ key, code }) => {
-    // if (startTime === 0) {
-    //   interval = setInterval(() => {
-    //     setStartTime((pev) => pev + 1);
-    //   }, 1000);
-    // }
-
     switch (key) {
       case "Backspace":
         setTyped((prev) => prev.slice(0, -1));
@@ -68,8 +59,20 @@ export default function Home() {
   };
   return (
     <main className=" h-screen w-screen bg-slate-900 ">
+      <div className=" md:hidden w-full h-10 bg-slate-700 ">
+        <p
+          onClick={() => setOpenMenu(!openMenu)}
+          className=" text-4xl text-sky-500 px-3 cursor-pointer"
+        >
+          =
+        </p>
+      </div>
       <div className="  grid grid-cols-4">
-        <div className=" col-span-1  h-screen overflow-y-auto">
+        <div
+          className={` md:block col-span-1  h-screen overflow-y-auto ${
+            openMenu ? " block absolute top-0 left-0 z-50  w-2/3" : " hidden"
+          }`}
+        >
           {InputData.map((item) => {
             return (
               <div className="  " key={item.id}>
@@ -96,15 +99,16 @@ export default function Home() {
             );
           })}
         </div>
-        <div className=" col-span-3 ">
+        <div className="  col-span-4 md:col-span-3 ">
           <div className="">
-            <div className=" relative ">
+            <div className=" relative  ">
               <ReactCodeMirror
                 value={typeData}
-                height="88vh"
+                height="85vh"
+                width="100%"
                 theme={githubDark}
                 extensions={[javascript({ jsx: true })]}
-                className=" text-gray-200 text-xl "
+                className=" text-gray-200 text-xl overflow-auto "
               />
               <UserTypings
                 className=" absolute inset-0 "
@@ -114,22 +118,22 @@ export default function Home() {
             </div>
           </div>
           <div className=" border-t-2 border-sky-500  p-4 ">
-            <ul className=" grid grid-cols-5 ">
-              <li className="">
+            <ul className=" grid  grid-cols-2 md:grid-cols-5">
+              <li className="  ">
                 <p>Time Left:</p>
                 <span>
                   <b>{startTime}</b>s
                 </span>
               </li>
-              <li className="">
+              <li className=" hidden md:block">
                 <p>Mistakes:</p>
                 <span>0</span>
               </li>
-              <li className="">
+              <li className=" hidden md:block">
                 <p>WPM:</p>
                 <span>{Math.floor(typed.length / 5)}</span>
               </li>
-              <li className="">
+              <li className=" hidden md:block">
                 <p>CPM:</p>
                 <span>0</span>
               </li>

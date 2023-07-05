@@ -572,16 +572,101 @@ export const InputData = [
         };`,
       },
       {
-        title: "",
-        code: ``,
+        title: "2. Add Two Numbers",
+        code: `var addTwoNumbers = function (l1, l2) {
+          const result = new ListNode();
+          let p = l1,
+            q = l2,
+            node = result,
+            carry = 0;
+          while (p || q || carry) {
+            const sum = (p ? p.val : 0) + (q ? q.val : 0) + carry;
+            node.next = new ListNode(sum % 10);
+            carry = Math.trunc(sum / 10);
+            node = node.next;
+            if (p) p = p.next;
+            if (q) q = q.next;
+          }
+          return result.next;
+        };`,
+      },
+      {
+        title: "160. Intersection of Two Linked Lists",
+        code: `var getIntersectionNode = function (headA, headB) {
+          if (!headA || !headB) return null;
+          var curA = headA;
+          var curB = headB;
+          while (curA != curB) {
+            curA = curA == null ? headB : curA.next;
+            curB = curB == null ? headA : curB.next;
+          }
+          return curA;
+        };`,
+      },
+      {
+        title: "234. Palindrome Linked List",
+        code: `var isPalindrome = function (head) {
+          let a = "",
+            b = "";
+        
+          while (head) {
+            a = a + head.val;
+            b = head.val + b;
+            head = head.next;
+          }
+        
+          return a === b;
+        };
+        `,
+      },
+      {
+        title: "83. Remove Duplicates from Sorted List",
+        code: `var deleteDuplicates = function (head) {
+          let p = head;
+          while (p && p.next) {
+            if (p.val === p.next.val) p.next = p.next.next;
+            else p = p.next;
+          }
+        
+          return head;
+        };
+        `,
       },
       {
         title: "",
         code: ``,
       },
+    ],
+  },
+  {
+    id: "4",
+    CategoryTitle: "Stack and Queue",
+    CategoryData: [
       {
-        title: "",
-        code: ``,
+        title: "155. Min Stack",
+        code: `var MinStack = function () {
+          this.elements = [];
+        };
+        
+        MinStack.prototype.push = function (val) {
+          this.elements.push({
+            value: val,
+            min: this.elements.length === 0 ? val : Math.min(val, this.getMin()),
+          });
+        };
+        
+        MinStack.prototype.pop = function () {
+          this.elements.pop();
+        };
+        
+        MinStack.prototype.top = function () {
+          return this.elements[this.elements.length - 1].value;
+        };
+        
+        MinStack.prototype.getMin = function () {
+          return this.elements[this.elements.length - 1].min;
+        };
+        `,
       },
       {
         title: "",
