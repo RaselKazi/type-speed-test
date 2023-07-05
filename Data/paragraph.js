@@ -939,6 +939,232 @@ export const InputData = [
         `,
       },
       {
+        title: "84. Largest Rectangle in Histogram",
+        link: "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+        code: `var largestRectangleArea = function (heights) {
+          var len = heights.length;
+          if (len <= 0) {
+            return 0;
+          }
+          heights.push(0);
+          ++len;
+        
+          var max = heights[0];
+          for (var i = 1; i < len; ++i) {
+            if (heights[i - 1] > heights[i]) {
+              var j = i - 1,
+                width = 0;
+              while (j >= 0 && heights[j] > heights[i]) {
+                ++width;
+                max = Math.max(max, width * heights[j]);
+                heights[j--] = heights[i];
+              }
+            }
+          }
+          return max;
+        };`,
+      },
+      {
+        title: "739. Daily Temperatures",
+        link: "https://leetcode.com/problems/daily-temperatures/description/",
+        code: `var dailyTemperatures = function (T) {
+          let stack = [];
+          let result = new Array(T.length).fill(0);
+          for (let i = 0; i < T.length; i++) {
+            while (stack.length && T[i] > T[stack[stack.length - 1]]) {
+              let temp = stack.pop();
+              result[temp] = i - temp;
+            }
+            stack.push(i);
+          }
+          return result;
+        };
+        `,
+      },
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+    ],
+  },
+  {
+    id: "5",
+    CategoryTitle: "Binary Search",
+    CategoryData: [
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+    ],
+  },
+  {
+    id: "6",
+    CategoryTitle: "Sliding window",
+    CategoryData: [
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+    ],
+  },
+  {
+    id: "7",
+    CategoryTitle: "Binary Tree and Binary Search Tree",
+    CategoryData: [
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+    ],
+  },
+  {
+    id: "8",
+    CategoryTitle: "Heap",
+    CategoryData: [
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+    ],
+  },
+  {
+    id: "9",
+    CategoryTitle: "Recursion and Backtracking",
+    CategoryData: [
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+    ],
+  },
+  {
+    id: "10",
+    CategoryTitle: "Dynamic Programming",
+    CategoryData: [
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+    ],
+  },
+  {
+    id: "11",
+    CategoryTitle: "Graph",
+    CategoryData: [
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+    ],
+  },
+  {
+    id: "12",
+    CategoryTitle: "Bit Manipulation",
+    CategoryData: [
+      {
+        title: "136. Single Number",
+        link: "https://leetcode.com/problems/single-number/",
+        code: `var singleNumber = function(nums) {
+          return nums.reduce((result, num) => result ^= num, 0); 
+     };`,
+      },
+      {
+        title: "137. Single Number II",
+        link: "https://leetcode.com/problems/single-number-ii/",
+        code: `var singleNumber = function (nums) {
+          let ones = 0;
+          let twos = 0;
+        
+          for (let num of nums) {
+            ones = (ones ^ num) & ~twos;
+            twos = (twos ^ num) & ~ones;
+          }
+        
+          return ones;
+        };
+        `,
+      },
+      {
+        title: "201. Bitwise AND of Numbers Range",
+        link: "https://leetcode.com/problems/bitwise-and-of-numbers-range/",
+        code: `function rangeBitwiseAnd(m, n) {
+          let i = 0;
+          while (m !== n) {
+            m >>= 1;
+            n >>= 1;
+            i++;
+          }
+          return (m <<= i);
+        }`,
+      },
+      {
+        title: "421. Maximum XOR of Two Numbers in an Array",
+        link: "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/",
+        code: `var findMaximumXOR = function (nums) {
+          var max = 0;
+          var mask = 0;
+        
+          for (let i = 31; i >= 0; i--) {
+            mask = mask | (1 << i);
+            const set = new Set();
+            for (let n of nums) {
+              set.add(n & mask);
+            }
+            let temp = max | (1 << i);
+            for (let prefix of set) {
+              if (set.has(temp ^ prefix)) {
+                max = temp;
+                break;
+              }
+            }
+          }
+          return max;
+        };`,
+      },
+      {
+        title: "338. Counting Bits",
+        link: "https://leetcode.com/problems/counting-bits/",
+        code: `var countBits = function (num) {
+          const res = new Uint8Array(num + 1);
+          for (let i = 0; i < res.length; i++) res[i] = res[i >> 1] + (i & 1);
+          return [...res];
+        };
+        `,
+      },
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+      {
+        title: "",
+        link: "",
+        code: ``,
+      },
+      {
         title: "",
         link: "",
         code: ``,

@@ -81,12 +81,14 @@ export default function Home() {
           {InputData.map((item) => {
             return (
               <div className="  " key={item.id}>
-                <p
+                <div
                   onClick={() => setOpenIndex(openIndex ? "" : item.id)}
-                  className=" capitalize p-3 border-b-2  border-sky-700 hover:bg-slate-600 cursor-pointer bg-slate-800 transition-all duration-500 "
+                  className=" flex w-full justify-between justify-items-center capitalize p-3 border-b-2  border-sky-700 hover:bg-slate-600 cursor-pointer bg-slate-800 transition-all duration-500 "
                 >
-                  {item.CategoryTitle}
-                </p>
+                  <p className="">{item.CategoryTitle}</p>
+                  <span>{item?.CategoryData.length}</span>
+                </div>
+
                 {item?.CategoryData.map((codeData, k) => {
                   return (
                     <div
