@@ -5,7 +5,7 @@ export const InputData = [
     CategoryData: [
       {
         title: "1. Two Sum",
-        Difficulty: "Medium",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/two-sum/",
         code: `var twoSum = function (nums, target) {
           const map = new Map();
@@ -23,7 +23,7 @@ export const InputData = [
       },
       {
         title: "121. Best Time to Buy and Sell Stock",
-        Difficulty: "Medium",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
         code: `var maxProfit = function (prices) {
         let profit = 0;
@@ -42,7 +42,7 @@ export const InputData = [
       },
       {
         title: "217. Contains Duplicate",
-        Difficulty: "Medium",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/contains-duplicate/",
         code: `var containsDuplicate = function (num) {
         return new Set(num).size !== num.length;
@@ -88,7 +88,7 @@ export const InputData = [
       {
         title: "152. Maximum Product Subarray",
         Difficulty: "Medium",
-        link: "",
+        link: "https://leetcode.com/problems/maximum-product-subarray/",
         code: `var maxProduct = function (num) {
         let result = num[0];
         let min = 1;
@@ -104,7 +104,7 @@ export const InputData = [
       {
         title: "11. Container With Most Water",
         Difficulty: "Medium",
-        link: "",
+        link: "https://leetcode.com/problems/container-with-most-water/",
         code: `const maxArea = (height) => {
           let result = 0,
             left = 0,
@@ -125,8 +125,8 @@ export const InputData = [
       },
       {
         title: "42. Trapping Rain Water",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Hard",
+        link: "https://leetcode.com/problems/trapping-rain-water/",
         code: `var trap = function (height) {
         const n = height.length;
         let result = 0,
@@ -149,8 +149,8 @@ export const InputData = [
       },
       {
         title: "48. Rotate Image",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/rotate-image/",
         code: `var rotate = function (matrix) {
         const n = matrix.length,
           m = n >> 1;
@@ -169,8 +169,8 @@ export const InputData = [
       },
       {
         title: "54. Spiral Matrix",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/spiral-matrix/",
         code: `var spiralOrder = function(matrix) {
           const res = []
           while(matrix.length){
@@ -190,8 +190,8 @@ export const InputData = [
       },
       {
         title: "54. Spiral Matrix",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/spiral-matrix/",
         code: `var spiralOrder = function (matrix) {
           let r = matrix.length,
             c = matrix[0].length;
@@ -223,8 +223,8 @@ export const InputData = [
       },
       {
         title: "73. Set Matrix Zeroes",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/set-matrix-zeroes/",
         code: `var setZeroes = function (matrix) {
         const m = matrix.length,
           n = matrix[0].length;
@@ -246,8 +246,8 @@ export const InputData = [
       },
       {
         title: "268. Missing Number",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/missing-number/",
         code: `var missingNumber = function (num) {
         let result = 0;
       
@@ -266,8 +266,8 @@ export const InputData = [
       },
       {
         title: "56. Merge Intervals",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/merge-intervals/",
         code: `var merge = function(intervals) {
         if (!intervals.length) return intervals;
          intervals.sort((a, b) => a[0] - b[0]);
@@ -286,7 +286,8 @@ export const InputData = [
       },
       {
         title: "55. Jump Game",
-        Difficulty: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/jump-game/",
         code: `var canJump = function (num) {
           let lastPos = num.length - 1;
           for (let i = lastPos; i >= 0; i--) {
@@ -304,8 +305,8 @@ export const InputData = [
     CategoryData: [
       {
         title: "344. Reverse String",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/reverse-string/",
         code: `var reverseString = function (s) {
         return s.reverse();
       };
@@ -324,8 +325,8 @@ export const InputData = [
       },
       {
         title: "242. Valid Anagram",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/valid-anagram/",
         code: `var isAnagram = function (s, t) {
           if (t.length !== s.length) return false;
           const counts = {};
@@ -341,8 +342,8 @@ export const InputData = [
       },
       {
         title: "8. String to Integer (atoi)",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/string-to-integer-atoi/",
         code: `var myAtoi = function (str) {
           const n = str.length;
         
@@ -370,8 +371,8 @@ export const InputData = [
       },
       {
         title: "3. Longest Substring Without Repeating Characters",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
         code: `var lengthOfLongestSubstring = function (s) {
           let set = new Set();
           let left = 0;
@@ -393,8 +394,8 @@ export const InputData = [
       },
       {
         title: "49. Group Anagrams",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/group-anagrams/",
         code: `var groupAnagrams = function (str) {
           const shortedString = str.map((word) => word.split("").sort().join(""));
           const hash = {};

@@ -92,15 +92,24 @@ export default function Home() {
                 {item?.CategoryData.map((codeData, k) => {
                   return (
                     <div
-                      className={`flex w-full justify-between justify-items-center p-3 pl-5 border-b-2  border-sky-700 
-                      bg-slate-900 hover:bg-slate-800 cursor-pointer transition-all duration-500  ${
-                        openIndex === item.id ? "  " : " hidden"
-                      }`}
+                      className={`flex w-full justify-between justify-items-center p-3 pl-5 border-b-2 bg-slate-900  border-sky-700 
+                       hover:bg-slate-700 cursor-pointer transition-all duration-500  ${
+                         openIndex === item.id ? "  " : " hidden"
+                       }
+                     `}
                       key={k}
                     >
                       <h6
                         onClick={() => handleItem(codeData.code)}
-                        className={`  `}
+                        className={` px-3 py-1 rounded-full   ${
+                          codeData.Difficulty === "Easy"
+                            ? "text-green-500 bg-green-900/40"
+                            : codeData.Difficulty === "Medium"
+                            ? "text-yellow-500 bg-yellow-900/40"
+                            : codeData.Difficulty === "Hard"
+                            ? " text-red-500 bg-red-900/40 "
+                            : "bg-slate-900"
+                        } `}
                       >
                         {codeData.title}
                       </h6>
