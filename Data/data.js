@@ -1,44 +1,35 @@
-const findWords = (board, words) => {
-  const dirs = [
-    [-1, 0],
-    [0, 1],
-    [1, 0],
-    [0, -1],
-  ];
-  let res = [];
-  const buildTrie = () => {
-    const root = {};
-    for (const w of words) {
-      let node = root;
-      for (const c of w) {
-        if (node[c] == null) node[c] = {};
-        node = node[c];
+const wordBreak = (s, wordDict) => {
+  if (wordDict == null || wordDict.length === 0) return false;
+  const set = new Set(wordDict);
+  const dp = Array(s.length + 1).fill(false);
+  dp[0] = true;
+
+  for (let end = 1; end <= s.length; end++) {
+    for (let start = 0; start < end; start++) {
+      const w = s.slice(start, end);
+      if (dp[start] === true && set.has(w)) {
+        dp[end] = true;
+        break;
       }
-      node.word = w;
-    }
-    return root;
-  };
-  const search = (node, x, y) => {
-    if (node.word != null) {
-      res.push(node.word);
-      node.word = null; // make sure only print one time for each word
-    }
-    if (x < 0 || x >= board.length || y < 0 || y >= board[0].length) return;
-    if (node[board[x][y]] == null) return;
-    const c = board[x][y];
-    board[x][y] = "#"; // Mark visited
-    for (const [dx, dy] of dirs) {
-      const i = x + dx;
-      const j = y + dy;
-      search(node[c], i, j);
-    }
-    board[x][y] = c; // Reset
-  };
-  const root = buildTrie();
-  for (let i = 0; i < board.length; i++) {
-    for (let j = 0; j < board[0].length; j++) {
-      search(root, i, j);
     }
   }
-  return res;
+  return dp[s.length];
+};
+var wordBreakDp = function (s, wordDict) {
+  var memo = [];
+  var recur = function (index) {
+    if (memo[index] != null) return memo[index];
+    if (index == s.length) return true;
+    for (let end = index + 1; end <= s.length; end++) {
+      if (wordDict.includes(s.substring(index, end)) && recur(end)) {
+        memo[index] = true;
+        return true;
+      } else {
+        memo[index] = false;
+      }
+    }
+    return false;
+  };
+  recur(0);
+  return memo[0];
 };

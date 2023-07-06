@@ -1194,6 +1194,138 @@ export const InputData = [
     CategoryTitle: "Heap",
     CategoryData: [
       {
+        title: "Heap",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/kth-largest-element-in-an-array/solutions/3427401/c-java-python-javascript-heap-priority-queue-with-explanation/",
+        code: `class MinHeap {
+          constructor() {
+            this.heap = [];
+          }
+        
+          size() {
+            return this.heap.length;
+          }
+        
+          peek() {
+            return this.heap[0];
+          }
+        
+          add(value) {
+            this.heap.push(value);
+            this.bubbleUp(this.heap.length - 1);
+          }
+        
+          poll() {
+            const min = this.heap[0];
+            const last = this.heap.pop();
+            if (this.heap.length > 0) {
+              this.heap[0] = last;
+              this.bubbleDown(0);
+            }
+            return min;
+          }
+        
+          bubbleUp(index) {
+            while (index > 0) {
+              const parentIndex = Math.floor((index - 1) / 2);
+              if (this.heap[parentIndex] > this.heap[index]) {
+                this.swap(parentIndex, index);
+                index = parentIndex;
+              } else {
+                break;
+              }
+            }
+          }
+        
+          bubbleDown(index) {
+            while (index < this.heap.length) {
+              let smallestChildIndex = index;
+              const leftChildIndex = index * 2 + 1;
+              const rightChildIndex = index * 2 + 2;
+              if (
+                leftChildIndex < this.heap.length &&
+                this.heap[leftChildIndex] < this.heap[smallestChildIndex]
+              ) {
+                smallestChildIndex = leftChildIndex;
+              }
+              if (
+                rightChildIndex < this.heap.length &&
+                this.heap[rightChildIndex] < this.heap[smallestChildIndex]
+              ) {
+                smallestChildIndex = rightChildIndex;
+              }
+              if (smallestChildIndex !== index) {
+                this.swap(smallestChildIndex, index);
+                index = smallestChildIndex;
+              } else {
+                break;
+              }
+            }
+          }
+        
+          swap(i, j) {
+            const temp = this.heap[i];
+            this.heap[i] = this.heap[j];
+            this.heap[j] = temp;
+          }
+        }`,
+      },
+      {
+        title: "215. Kth Largest Element in an Array",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+        code: `var findKthLargest = function (nums, k) {
+          const minHeap = new MinHeap();
+          for (let num of nums) {
+            minHeap.add(num);
+            if (minHeap.size() > k) {
+              minHeap.poll();
+            }
+          }
+          return minHeap.peek();
+        };`,
+      },
+      {
+        title: "23. Merge k Sorted Lists",
+        Difficulty: "Hard",
+        link: "https://leetcode.com/problems/merge-k-sorted-lists/",
+        code: `var mergeKLists = function (lists) {
+          if (lists == null || lists.length === 0) return null;
+        
+          const mergeTwoLists = (l1, l2) => {
+            if (l1 == null) return l2;
+            if (l2 == null) return l1;
+        
+            if (l1.val > l2.val) {
+              l2.next = mergeTwoLists(l1, l2.next);
+              return l2;
+            } else {
+              l1.next = mergeTwoLists(l1.next, l2);
+              return l1;
+            }
+          };
+        
+          while (lists.length > 1)
+            lists.push(mergeTwoLists(lists.shift(), lists.shift()));
+          return lists.shift();
+        };`,
+      },
+      {
+        title: "347. Top K Frequent Elements",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/top-k-frequent-elements/",
+        code: `var topKFrequent = function (nums, k) {
+          let res = [], map = new Map();
+          nums.forEach((n) => map.set(n, map.get(n) + 1 || 1));
+          let sortedArray = [...map.entries()].sort((a, b) => b[1] - a[1]);
+          for (let i = 0; i < k; i++) {
+            res.push(sortedArray[i][0]);
+          }
+          return res;
+        };`,
+      },
+
+      {
         title: "",
         Difficulty: "",
         link: "",
@@ -1449,6 +1581,197 @@ export const InputData = [
     CategoryTitle: "Dynamic Programming",
     CategoryData: [
       {
+        title: "70. Climbing Stairs",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/climbing-stairs/",
+        code: `var climbStairs = function (n) {
+          let dp = new Array(n + 1);
+          (dp[1] = 1), (dp[2] = 2);
+          for (let i = 3; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+          }
+          return dp[n];
+        };
+        
+        var climbStairs = function (n, memo = new Array()) {
+          if (n === 1) {
+            return 1;
+          }
+          if (n === 2) {
+            return 2;
+          }
+          if (memo[n] !== undefined) {
+            return memo[n];
+          }
+          let res = climbStairs(n - 1, memo) + climbStairs(n - 2, memo);
+          memo[n] = res;
+          return res;
+        };`,
+      },
+      {
+        title: "62. Unique Paths",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/unique-paths/",
+        code: `const uniquePathsRecursive = (m, n) => {
+          return helper(m, n, 1, 1);
+        };
+        
+        const helper = (m, n, row, col) => {
+          if (row === m && col === n) return 1;
+          if (row > m || col > n) return 0;
+          const pathsRight = helper(m, n, row, col + 1);
+          const pathsDown = helper(m, n, row + 1, col);
+          return pathsRight + pathsDown;
+        };
+        var uniquePaths = function (m, n) {
+          const dp = Array(n).fill(0);
+          dp[0] = 1;
+          for (let i = 0; i < m; i++) {
+            for (let j = 1; j < n; j++) {
+              dp[j] += dp[j - 1];
+            }
+          }
+          return dp[n - 1];
+        };`,
+      },
+      {
+        title: "322. Coin Change",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/coin-change/",
+        code: `var coinChange = function (coins, amount) {
+          const memo = new Map();
+          function permute(left) {
+            if (memo.has(left)) return memo.get(left);
+            if (left === 0) return 0;
+            let min = Infinity;
+        
+            for (let coin of coins) {
+              if (left - coin >= 0) min = Math.min(min, permute(left - coin));
+            }
+            memo.set(left, min + 1);
+            return min + 1;
+          }
+          const result = permute(amount);
+          return result === Infinity ? -1 : result;
+        };
+        var coinChange = function(coins, amount) {
+          const dp = Array(amount+1).fill(Infinity);
+          dp[0] = 0;
+          for(let i = 1; i < dp.length; i++) {
+              for(let coin of coins) {
+                  if(i-coin >= 0) dp[i] = Math.min(dp[i], dp[i-coin]+1);
+              }
+          }
+          return dp[amount] === Infinity ? -1 : dp[amount];
+        };`,
+      },
+      {
+        title: "300. Longest Increasing Subsequence",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/longest-increasing-subsequence/",
+        code: `var lengthOfLIS = function (nums) {
+          const dp = Array.from(nums, () => 1);
+          let max = 1;
+          for (let i = 1; i < nums.length; i++) {
+            for (let j = 0; j < i; j++) {
+              if (nums[i] > nums[j]) {
+                dp[i] = Math.max(dp[i], dp[j] + 1);
+                max = Math.max(dp[i], max);
+              }
+            }
+          }
+          return max;
+        };
+        var lengthOfLIS = function (nums) {
+          const binarySearchPosition = (dp, target, hi) => {
+            let lo = 0;
+            while (lo <= hi) {
+              let mid = Math.floor((lo + hi) / 2);
+              if (target === dp[mid]) return mid;
+              else if (target < dp[mid]) hi = mid - 1;
+              else lo = mid + 1;
+            }
+            return lo;
+          };
+          if (nums === null || nums.length === 0) return 0;
+          if (nums.length === 1) return 1;
+          let dp = new Array(nums.length).fill(Number.MAX_SAFE_INTEGER);
+          for (let i = 0; i < nums.length; i++) {
+            let pos = binarySearchPosition(dp, nums[i], i);
+            dp[pos] = nums[i];
+          }
+          for (let i = dp.length - 1; i >= 0; i--) {
+            if (dp[i] !== Number.MAX_SAFE_INTEGER) return i + 1;
+          }
+        
+          return 0;
+        };`,
+      },
+      {
+        title: "139. Word Break",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/word-break/",
+        code: `const wordBreak = (s, wordDict) => {
+          if (wordDict == null || wordDict.length === 0) return false;
+          const set = new Set(wordDict);
+          const dp = Array(s.length + 1).fill(false);
+          dp[0] = true;
+        
+          for (let end = 1; end <= s.length; end++) {
+            for (let start = 0; start < end; start++) {
+              const w = s.slice(start, end);
+              if (dp[start] === true && set.has(w)) {
+                dp[end] = true;
+                break;
+              }
+            }
+          }
+          return dp[s.length];
+        };
+        var wordBreakDp = function (s, wordDict) {
+          var memo = [];
+          var recur = function (index) {
+            if (memo[index] != null) return memo[index];
+            if (index == s.length) return true;
+            for (let end = index + 1; end <= s.length; end++) {
+              if (wordDict.includes(s.substring(index, end)) && recur(end)) {
+                memo[index] = true;
+                return true;
+              } else {
+                memo[index] = false;
+              }
+            }
+            return false;
+          };
+          recur(0);
+          return memo[0];
+        };`,
+      },
+      {
+        title: "",
+        Difficulty: "",
+        link: "",
+        code: ``,
+      },
+      {
+        title: "",
+        Difficulty: "",
+        link: "",
+        code: ``,
+      },
+      {
+        title: "",
+        Difficulty: "",
+        link: "",
+        code: ``,
+      },
+      {
+        title: "",
+        Difficulty: "",
+        link: "",
+        code: ``,
+      },
+      {
         title: "",
         Difficulty: "",
         link: "",
@@ -1523,6 +1846,38 @@ export const InputData = [
           visited.add(v);
           return false;
         };`,
+      },
+      {
+        title: "210. Course Schedule II",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/course-schedule-ii/",
+        code: `const findOrder = (numCourses, prerequisites) => {
+          const inDegrees = Array(numCourses).fill(0);
+          for (const [v] of prerequisites) {
+            inDegrees[v]++;
+          }
+        
+          const q = [];
+          for (let i = 0; i < inDegrees.length; i++) {
+            const degree = inDegrees[i];
+            if (degree === 0) q.push(i);
+          }
+        
+          const res = [];
+          while (q.length) {
+            const u0 = q.shift();
+            numCourses--;
+            res.push(u0);
+            for (const [v, u] of prerequisites) {
+              if (u === u0) {
+                inDegrees[v]--;
+                if (inDegrees[v] === 0) q.push(v);
+              }
+            }
+          }
+          return numCourses === 0 ? res : [];
+        };
+        `,
       },
       {
         title: "200. Number of Islands",
@@ -1723,10 +2078,26 @@ export const InputData = [
         `,
       },
       {
-        title: "",
-        Difficulty: "",
-        link: "",
-        code: ``,
+        title: "743. Network Delay Time",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/network-delay-time/",
+        code: `const networkDelayTime = (times, N, K) => {
+          const time = Array(N + 1).fill(Infinity);
+          time[K] = 0;
+          for (let i = 0; i < N; i++) {
+            for (const [u, v, t] of times) {
+              if (time[u] === Infinity) continue;
+              if (time[v] > time[u] + t) {
+                time[v] = time[u] + t;
+              }
+            }
+          }
+          let res = 0;
+          for (let i = 1; i <= N; i++) {
+            res = Math.max(res, time[i]);
+          }
+          return res === Infinity ? -1 : res;
+        };`,
       },
       {
         title: "",
