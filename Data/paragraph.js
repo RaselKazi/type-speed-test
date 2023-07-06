@@ -413,8 +413,8 @@ export const InputData = [
       },
       {
         title: "125. Valid Palindrome",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/valid-palindrome/",
         code: `var isPalindrome = function (s) {
           s = s.toLowerCase().replace(/[^a-z0-9]/gi, "");
           for (let i = 0, j = s.length - 1; i <= j; i++, j--) {
@@ -425,8 +425,8 @@ export const InputData = [
       },
       {
         title: "5. Longest Palindromic Substring",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/longest-palindromic-substring/",
         code: `var longestPalindrome = function (s) {
           s = "#" + s.split("").join("#") + "#";
         
@@ -446,32 +446,9 @@ export const InputData = [
         };`,
       },
       {
-        title: "3. Longest Substring Without Repeating Characters",
-        Difficulty: "",
-        link: "",
-        code: `var lengthOfLongestSubstring = function (s) {
-          let set = new Set();
-          let left = 0;
-          let maxSize = 0;
-        
-          if (s.length === 0) return 0;
-          if (s.length === 1) return 1;
-        
-          for (let i = 0; i < s.length; i++) {
-            while (set.has(s[i])) {
-              set.delete(s[left]);
-              left++;
-            }
-            set.add(s[i]);
-            maxSize = Math.max(maxSize, i - left + 1);
-          }
-          return maxSize;
-        };`,
-      },
-      {
         title: "6. Zigzag Conversion",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/zigzag-conversion/",
         code: `var convert = function (s, numRows) {
           if (numRows <= 1) return s;
         
@@ -491,8 +468,8 @@ export const InputData = [
       },
       {
         title: "28. Find the Index of the First Occurrence in a String",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
         code: `var strStr = function (haystack, needle) {
           for (let i = 0; ; i++) {
             for (let j = 0; ; j++) {
@@ -505,8 +482,8 @@ export const InputData = [
       },
       {
         title: "20. Valid Parentheses",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/valid-parentheses/",
         code: `var isValid = function (str) {
           const hashMap = { "(": ")", "{": "}", "[": "]" };
           const stuck = [];
@@ -526,8 +503,8 @@ export const InputData = [
       },
       {
         title: "38. Count and Say",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/count-and-say/",
         code: `var countAndSay = function (n) {
           var str = "1";
           for (var i = 1; i < n; i++) {
@@ -557,8 +534,8 @@ export const InputData = [
     CategoryData: [
       {
         title: "206. Reverse Linked List",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/reverse-linked-list/",
         code: `var reverseList = function (head) {
           let prev = null;
           let tail = head;
@@ -575,8 +552,8 @@ export const InputData = [
       },
       {
         title: "21. Merge Two Sorted Lists",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/merge-two-sorted-lists/",
         code: `var mergeTwoLists = function (l1, l2) {
           if (l1 == null) return l2;
           if (l2 == null) return l1;
@@ -592,8 +569,8 @@ export const InputData = [
       },
       {
         title: "19. Remove Nth Node From End of List",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
         code: `var removeNthFromEnd = function (head, n) {
           const start = new ListNode();
           let slow = start,
@@ -615,8 +592,8 @@ export const InputData = [
       },
       {
         title: "141. Linked List Cycle",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/linked-list-cycle/",
         code: `var hasCycle = function (head) {
           let p1 = head;
           let p2 = head;
@@ -635,8 +612,8 @@ export const InputData = [
       },
       {
         title: "2. Add Two Numbers",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/add-two-numbers/",
         code: `var addTwoNumbers = function (l1, l2) {
           const result = new ListNode();
           let p = l1,
@@ -656,8 +633,8 @@ export const InputData = [
       },
       {
         title: "160. Intersection of Two Linked Lists",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/intersection-of-two-linked-lists/",
         code: `var getIntersectionNode = function (headA, headB) {
           if (!headA || !headB) return null;
           var curA = headA;
@@ -671,8 +648,8 @@ export const InputData = [
       },
       {
         title: "234. Palindrome Linked List",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/palindrome-linked-list/",
         code: `var isPalindrome = function (head) {
           let a = "",
             b = "";
@@ -689,8 +666,8 @@ export const InputData = [
       },
       {
         title: "83. Remove Duplicates from Sorted List",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Easy",
+        link: "https://leetcode.com/problems/remove-duplicates-from-sorted-list/",
         code: `var deleteDuplicates = function (head) {
           let p = head;
           while (p && p.next) {
@@ -715,8 +692,8 @@ export const InputData = [
     CategoryData: [
       {
         title: "155. Min Stack",
-        Difficulty: "",
-        link: "",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/min-stack/",
         code: `var MinStack = function () {
           this.elements = [];
         };
@@ -743,7 +720,7 @@ export const InputData = [
       },
       {
         title: "20. Valid Parentheses",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/valid-parentheses/",
         code: `var isValid = function (s) {
           const stack = [];
@@ -767,7 +744,7 @@ export const InputData = [
       },
       {
         title: "150. Evaluate Reverse Polish Notation",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/evaluate-reverse-polish-notation/description/",
         code: `var evalRPN = function (tokens) {
           let stack = [];
@@ -791,6 +768,7 @@ export const InputData = [
       },
       {
         title: "232. Implement Queue using Stacks",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/implement-queue-using-stacks/description/",
         code: `var MyQueue = function () {
           this.stack1 = [];
@@ -827,7 +805,7 @@ export const InputData = [
       },
       {
         title: "225. Implement Stack using Queues",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/implement-stack-using-queues/description/",
         code: `class MyQueue {
           constructor() {
@@ -870,7 +848,7 @@ export const InputData = [
       },
       {
         title: "225. Implement Stack using Queues",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/implement-stack-using-queues/description/",
         code: `var MyStack = function () {
           this.inQueue = [];
@@ -909,7 +887,7 @@ export const InputData = [
       },
       {
         title: "622. Design Circular Queue",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/design-circular-queue/description/",
         code: `var MyCircularQueue = function (k) {
           this.storage = [];
@@ -960,7 +938,7 @@ export const InputData = [
       },
       {
         title: "239. Sliding Window Maximum",
-        Difficulty: "",
+        Difficulty: "Hard",
         link: "https://leetcode.com/problems/sliding-window-maximum/",
         code: `var maxSlidingWindow = function (nums, k) {
           const q = [];
@@ -984,7 +962,7 @@ export const InputData = [
       },
       {
         title: "84. Largest Rectangle in Histogram",
-        Difficulty: "",
+        Difficulty: "Hard",
         link: "https://leetcode.com/problems/largest-rectangle-in-histogram/",
         code: `var largestRectangleArea = function (heights) {
           var len = heights.length;
@@ -1011,7 +989,7 @@ export const InputData = [
       },
       {
         title: "739. Daily Temperatures",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/daily-temperatures/description/",
         code: `var dailyTemperatures = function (T) {
           let stack = [];
@@ -1077,7 +1055,7 @@ export const InputData = [
       },
       {
         title: "102. Binary Tree Level Order Traversal",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/binary-tree-level-order-traversal/",
         code: `var levelOrder = function(root) {
           if (root == null) return [];
@@ -1098,7 +1076,7 @@ export const InputData = [
       },
       {
         title: "104. Maximum Depth of Binary Tree",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
         code: `var maxDepth = function(root) {
           return root == null ? 0 : 1 + Math.max(maxDepth(root.left), maxDepth(root.right))
@@ -1107,7 +1085,7 @@ export const InputData = [
       },
       {
         title: "98. Validate Binary Search Tree",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/validate-binary-search-tree/",
         code: `var isValidBST = function (root, min = null, max = null) {
           if (!root) return true;
@@ -1118,7 +1096,7 @@ export const InputData = [
       },
       {
         title: "101. Symmetric Tree",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/symmetric-tree/",
         code: `var isSymmetric = function (root) {
           if (root == null) return true;
@@ -1134,7 +1112,7 @@ export const InputData = [
       },
       {
         title: "105. Construct Binary Tree from PreOrder and InOrder Traversal",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
         code: `var buildTree = function (preOrder, inOrder) {
           const n = preOrder.length;
@@ -1149,7 +1127,7 @@ export const InputData = [
       },
       {
         title: "108. Convert Sorted Array to Binary Search Tree",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/",
         code: `var sortedArrayToBST = function (nums) {
           const n = nums.length;
@@ -1163,7 +1141,7 @@ export const InputData = [
       },
       {
         title: "112. Path Sum",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/path-sum/",
         code: `var hasPathSum = function (root, targetSum) {
           if (root == null) return false;
@@ -1177,7 +1155,7 @@ export const InputData = [
       },
       {
         title: "236. Lowest Common Ancestor of a Binary Tree",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
         code: `function lowestCommonAncestor(root, p, q) {
           if (!root || root === p || root === q) return root;
@@ -1188,7 +1166,7 @@ export const InputData = [
       },
       {
         title: "94. Binary Tree InOrder Traversal",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/binary-tree-inorder-traversal/",
         code: `var inOrderTraversal = function (root) {
           const res = [];
@@ -1229,7 +1207,7 @@ export const InputData = [
     CategoryData: [
       {
         title: "70. Climbing Stairs",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/climbing-stairs/",
         code: `var climbStairs = function (n) {
           const cache = new Map();
@@ -1245,7 +1223,7 @@ export const InputData = [
       },
       {
         title: "22. Generate Parentheses",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/generate-parentheses/",
         code: `var generateParenthesis = function (n) {
           var arr = [];
@@ -1261,7 +1239,7 @@ export const InputData = [
       },
       {
         title: "39. Combination Sum",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/combination-sum/description/",
         code: `function combinationSum(candidates, target) {
           var buffer = [];
@@ -1282,7 +1260,7 @@ export const InputData = [
       },
       {
         title: "46. Permutations",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/permutations/description/",
         code: `const swap = (arr, i, j) => {
           [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -1303,7 +1281,7 @@ export const InputData = [
       },
       {
         title: "78. Subsets",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/subsets/description/",
         code: `var subsets = function (num) {
           const result = [];
@@ -1323,7 +1301,7 @@ export const InputData = [
       },
       {
         title: "79. Word Search",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/word-search/description/",
         code: `var exist = function (board, word) {
           const m = board.length,
@@ -1362,7 +1340,7 @@ export const InputData = [
       },
       {
         title: "51. N-Queens",
-        Difficulty: "",
+        Difficulty: "Hard",
         link: "https://leetcode.com/problems/n-queens/description/",
         code: `var solveNQueens = function(n) {
           const res = [];
@@ -1386,7 +1364,7 @@ export const InputData = [
       },
       {
         title: "17. Letter Combinations of a Phone Number",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/",
         code: `const L = {'2':"abc",'3':"def",'4':"ghi",'5':"jkl",
         '6':"mno",'7':"pqrs",'8':"tuv",'9':"wxyz"}
@@ -1408,7 +1386,7 @@ export const InputData = [
       },
       {
         title: "131. Palindrome Partitioning",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/palindrome-partitioning/description/",
         code: `var partition = function (s) {
           function isPalindrome(str) {
@@ -1439,7 +1417,7 @@ export const InputData = [
       },
       {
         title: "93. Restore IP Addresses",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/restore-ip-addresses/description/",
         code: `var restoreIpAddresses = function (s) {
           const result = [];
@@ -1496,7 +1474,7 @@ export const InputData = [
     CategoryData: [
       {
         title: "136. Single Number",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/single-number/",
         code: `var singleNumber = function(nums) {
           return nums.reduce((result, num) => result ^= num, 0); 
@@ -1504,7 +1482,7 @@ export const InputData = [
       },
       {
         title: "137. Single Number II",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/single-number-ii/",
         code: `var singleNumber = function (nums) {
           let ones = 0;
@@ -1521,7 +1499,7 @@ export const InputData = [
       },
       {
         title: "201. Bitwise AND of Numbers Range",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/bitwise-and-of-numbers-range/",
         code: `function rangeBitwiseAnd(m, n) {
           let i = 0;
@@ -1535,7 +1513,7 @@ export const InputData = [
       },
       {
         title: "421. Maximum XOR of Two Numbers in an Array",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/",
         code: `var findMaximumXOR = function (nums) {
           var max = 0;
@@ -1560,7 +1538,7 @@ export const InputData = [
       },
       {
         title: "338. Counting Bits",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/counting-bits/",
         code: `var countBits = function (num) {
           const res = new Uint8Array(num + 1);
@@ -1571,7 +1549,7 @@ export const InputData = [
       },
       {
         title: "268. Missing Number",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/missing-number/",
         code: `var missingNumber = function (nums) {
           let result = 0;
@@ -1584,7 +1562,7 @@ export const InputData = [
       },
       {
         title: "190. Reverse Bits",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/reverse-bits/",
         code: `const reverseBits = function (n) {
           return parseInt([...n.toString(2)].reverse().join("").padEnd(32, "0"), 2);
@@ -1592,7 +1570,7 @@ export const InputData = [
       },
       {
         title: "90. Subsets II",
-        Difficulty: "",
+        Difficulty: "Medium",
         link: "https://leetcode.com/problems/subsets-ii/",
         code: `var subsetsWithDup = function(nums) {
           nums.sort((a, b) => a - b)
@@ -1618,7 +1596,7 @@ export const InputData = [
       },
       {
         title: "169. Majority Element",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/majority-element/",
         code: `function majorityElement(nums) {
           let candidate;
@@ -1634,7 +1612,7 @@ export const InputData = [
       },
       {
         title: "231. Power of Two",
-        Difficulty: "",
+        Difficulty: "Easy",
         link: "https://leetcode.com/problems/power-of-two/",
         code: `let isPowerOfTwo = n => n > 0 ? !(n & n-1) : false;`,
       },

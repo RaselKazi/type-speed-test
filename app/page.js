@@ -101,7 +101,7 @@ export default function Home() {
                     >
                       <h6
                         onClick={() => handleItem(codeData.code)}
-                        className={` px-3 py-1 rounded-full   ${
+                        className={` px-3 py-1 rounded-full whitespace-nowrap truncate max-w-[86%] ${
                           codeData.Difficulty === "Easy"
                             ? "text-green-500 bg-green-900/40"
                             : codeData.Difficulty === "Medium"
