@@ -135,7 +135,7 @@ export default function Home() {
                 height="85vh"
                 theme={githubDark}
                 extensions={[javascript({ jsx: true })]}
-                className=" text-gray-200 text-xl overflow-auto "
+                className=" text-gray-200 text-xs md:text-xl overflow-auto "
               />
               {typed && (
                 <UserTypings

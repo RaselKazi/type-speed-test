@@ -1461,6 +1461,286 @@ export const InputData = [
     CategoryTitle: "Graph",
     CategoryData: [
       {
+        title: "133. Clone Graph",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/clone-graph/solutions/",
+        code: `var cloneGraph = function (graph) {
+          function traverse(node) {
+            if (!map.has(node.val)) {
+              map.set(node.val, new Node(node.val));
+              map.get(node.val).neighbors = node.neighbors.map(traverse);
+            }
+            return map.get(node.val);
+          }
+        
+          let map = new Map();
+          return graph ? traverse(graph) : graph;
+        };`,
+      },
+      {
+        title: "207. Course Schedule",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/course-schedule/",
+        code: `var canFinish = function (numCourses, prerequisites) {
+          graph = new Map();
+          visiting = new Set();
+          visited = new Set();
+        
+          for (let [v, e] of prerequisites) {
+            if (graph.has(v)) {
+              let edges = graph.get(v);
+              edges.push(e);
+              graph.set(v, edges);
+            } else {
+              graph.set(v, [e]);
+            }
+          }
+          for (const [v, e] of graph) {
+            if (DFS(v)) {
+              return false; //if cyclic it will not finish so it is false
+            }
+          }
+          return true;
+        };
+        
+        var DFS = function (v) {
+          visiting.add(v);
+          let edges = graph.get(v); // get all the edges to explore
+          if (edges) {
+            for (let e of edges) {
+              if (visited.has(e)) {
+                continue;
+              }
+              if (visiting.has(e)) {
+                return true;
+              }
+              if (DFS(e)) {
+                return true;
+              }
+            }
+          }
+          visiting.delete(v); // remove from visiting set when all decedant v are visited
+          visited.add(v);
+          return false;
+        };`,
+      },
+      {
+        title: "200. Number of Islands",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/number-of-islands/",
+        code: `var numIslands = function (grid) {
+          const gridLength = grid.length;
+          const rowLength = grid[0].length;
+          let count = 0;
+          for (let i = 0; i < gridLength; i++) {
+            for (let j = 0; j < rowLength; j++) {
+              if (grid[i][j] === "1") {
+                dfs(i, j);
+                count++;
+              }
+            }
+          }
+          function dfs(i, j) {
+            if (grid[i][j] === "1") {
+              grid[i][j] = "0";
+              // look north
+              if (i - 1 >= 0) dfs(i - 1, j);
+              // look east
+              if (j + 1 < rowLength) dfs(i, j + 1);
+              // look south
+              if (i + 1 < gridLength) dfs(i + 1, j);
+              // look west
+              if (j - 1 >= 0) dfs(i, j - 1);
+            }
+          }
+          return count;
+        };`,
+      },
+      {
+        title: "417. Pacific Atlantic Water Flow",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+        code: `var pacificAtlantic = function (M) {
+          if (!M.length) return M;
+          let y = M.length,
+            x = M[0].length,
+            ans = [],
+            dp = new Uint8Array(x * y);
+            
+          const dfs = (i, j, w, h) => {
+            let ij = i * x + j;
+            if (dp[ij] & w || M[i][j] < h) return;
+            (dp[ij] += w), (h = M[i][j]);
+            if (dp[ij] === 3) ans.push([i, j]);
+            if (i + 1 < y) dfs(i + 1, j, w, h);
+            if (i > 0) dfs(i - 1, j, w, h);
+            if (j + 1 < x) dfs(i, j + 1, w, h);
+            if (j > 0) dfs(i, j - 1, w, h);
+          };
+          for (let i = 0; i < y; i++) {
+            dfs(i, 0, 1, M[i][0]);
+            dfs(i, x - 1, 2, M[i][x - 1]);
+          }
+          for (let j = 0; j < x; j++) {
+            dfs(0, j, 1, M[0][j]);
+            dfs(y - 1, j, 2, M[y - 1][j]);
+          }
+          return ans;
+        };`,
+      },
+      {
+        title: "130. Surrounded Regions",
+        Difficulty: "Medium",
+        link: "https://leetcode.com/problems/surrounded-regions/",
+        code: `var solve = function (board) {
+          for (let i = 0; i < board.length; i++) {
+            for (let j = 0; j < board[0].length; j++) {
+              if (
+                board[i][j] === "O" &&
+                (i === 0 ||
+                  j === 0 ||
+                  i === board.length - 1 ||
+                  j === board[0].length - 1)
+              )
+                dfs(i, j);
+            }
+          }
+        
+          for (let i = 0; i < board.length; i++) {
+            for (let j = 0; j < board[0].length; j++) {
+              if (board[i][j] === "Visited") {
+                board[i][j] = "O";
+              } else {
+                board[i][j] = "X";
+              }
+            }
+          }
+        
+          function dfs(i, j) {
+            if (
+              i < 0 ||
+              i >= board.length ||
+              j < 0 ||
+              j >= board[i].length ||
+              board[i][j] === "Visited" ||
+              board[i][j] === "X"
+            )
+              return;
+        
+            board[i][j] = "Visited";
+            dfs(i + 1, j);
+            dfs(i - 1, j);
+            dfs(i, j + 1);
+            dfs(i, j - 1);
+        
+            return;
+          }
+        };
+        `,
+      },
+      {
+        title: "127. Word Ladder",
+        Difficulty: "Hard",
+        link: "https://leetcode.com/problems/word-ladder/",
+        code: `function ladderLength(beginWord, endWord, wordList) {
+          const dict = new Set(wordList);
+          let step = 1;
+          let q = [beginWord];
+        
+          while (q.length) {
+            const next = [];
+            for (let w of q) {
+              if (w === endWord) return step;
+        
+              for (let i = 0; i < w.length; i++) {
+                for (let j = 0; j < 26; j++) {
+                  const w2 =
+                    w.slice(0, i) + String.fromCharCode(97 + j) + w.slice(i + 1); // 97 -> 'a'
+        
+                  if (dict.has(w2)) {
+                    next.push(w2);
+                    dict.delete(w2);
+                  }
+                }
+              }
+            }
+            q = next;
+            step++;
+          }
+        
+          return 0;
+        }
+        `,
+      },
+      {
+        title: "212. Word Search II",
+        Difficulty: "Hard",
+        link: "https://leetcode.com/problems/word-search-ii/",
+        code: `const findWords = (board, words) => {
+          const dirs = [
+            [-1, 0],
+            [0, 1],
+            [1, 0],
+            [0, -1],
+          ];
+          let res = [];
+          const buildTrie = () => {
+            const root = {};
+            for (const w of words) {
+              let node = root;
+              for (const c of w) {
+                if (node[c] == null) node[c] = {};
+                node = node[c];
+              }
+              node.word = w;
+            }
+            return root;
+          };
+          const search = (node, x, y) => {
+            if (node.word != null) {
+              res.push(node.word);
+              node.word = null; // make sure only print one time for each word
+            }
+            if (x < 0 || x >= board.length || y < 0 || y >= board[0].length) return;
+            if (node[board[x][y]] == null) return;
+            const c = board[x][y];
+            board[x][y] = "#"; // Mark visited
+            for (const [dx, dy] of dirs) {
+              const i = x + dx;
+              const j = y + dy;
+              search(node[c], i, j);
+            }
+            board[x][y] = c; // Reset
+          };
+          const root = buildTrie();
+          for (let i = 0; i < board.length; i++) {
+            for (let j = 0; j < board[0].length; j++) {
+              search(root, i, j);
+            }
+          }
+          return res;
+        };
+        `,
+      },
+      {
+        title: "",
+        Difficulty: "",
+        link: "",
+        code: ``,
+      },
+      {
+        title: "",
+        Difficulty: "",
+        link: "",
+        code: ``,
+      },
+      {
+        title: "",
+        Difficulty: "",
+        link: "",
+        code: ``,
+      },
+      {
         title: "",
         Difficulty: "",
         link: "",

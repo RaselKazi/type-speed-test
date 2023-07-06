@@ -28,7 +28,7 @@ export default function UserTypings({ userInput, words, className = "" }) {
           lineNumbers: true,
           readOnly: true, // Make the editor read-only
         }}
-        className=" absolute  text-xl "
+        className=" absolute  text-xs md:text-xl "
       />
     </div>
   );
